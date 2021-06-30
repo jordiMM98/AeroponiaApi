@@ -1,0 +1,335 @@
+
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+
+
+/* Set a style for all buttons */
+
+
+
+/* Extra styles for the cancel button */
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+
+/*.container {
+  padding: 46px;
+  }*/
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 12;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 100px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #ffffff;
+    margin: 1% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #000000;
+ 
+ /* margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 5px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */ /* Could be more or less, depending on screen size */
+
+  }
+
+  /* The Close Button (x) */
+
+
+
+
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+
+
+/*
+Full screen Modal 
+*/
+.fullscreen-modal .modal-dialog {
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .fullscreen-modal .modal-dialog {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .fullscreen-modal .modal-dialog {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .fullscreen-modal .modal-dialog {
+     width: 1170px;
+  }
+}
+body a {
+text-decoration: none;
+}
+.thumb {
+display: inline;
+max-height: 200px;
+}
+#thumblist {
+text-align: center;
+border-radius: 8px;
+padding: 0;
+background: rgba(127,127,127,.8);
+}
+#thumblist img {
+border-radius: 8px;
+}
+.description {
+color: white;
+text-decoration: none;
+}
+
+/** relevant CSS Below **/
+
+.lightbox {
+display: none; /**sets the default display to hide the lightbox until it's the :target**/
+position: fixed; /**the rest of this styling makes the lightbox full screen when selected**/
+z-index: 999;
+width: 100%;
+height: 100%;
+text-align: center;
+top: 0;
+left: 0;
+background: rgba(0,0,0,.8);
+}
+.lightbox img { /**sets the styling of the image in the lightbox**/
+max-width: 80%;
+max-height: 90%;
+text-align: center;
+margin-top: 2%;
+}
+.lightbox:target { /**this is where the magic happens. makes the lightbox display when it's the target of a clickable link**/
+outline: none;
+display: block;
+}
+.previous { /**styling the left arrow**/
+position: fixed;
+left: 4px;
+top: 40%;
+width: 40px;
+}
+.exit { /**styling the exit button**/
+position: fixed;
+top: 4px;
+right: 4px;
+width: 40px;
+}
+.next { /**styling the right arrow**/
+position: fixed;
+right: 4px;
+top: 40%;
+width: 40px;
+}
+#restore{
+  display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 200px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: ;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% 20px;
+    letter-spacing: 0.05em;
+  }
+#backup {
+    display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 200px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background:;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% 20px;
+    letter-spacing: 0.05em;
+
+  
+}
+
+
+    
+
+
+#update{
+   
+   display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 200px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #4CAF50;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% auto;
+    letter-spacing: 0.05em;
+}
+
+#actualizar_user{
+    display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 200px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #4CAF50;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% 20px;
+    letter-spacing: 0.05em;
+}
+#re{
+    display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 200px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background:#ff4134 ;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% 20px;
+    letter-spacing: 0.05em;
+}
+#pdf{
+    display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 110px;
+    height: 40px;
+  
+    padding: 0 20px;
+    background:#d9534f ;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% auto;
+    letter-spacing: 0.05em;
+
+   
+ 
+  
+   
+}
+#excel{
+    display: inline-block;
+    color: white;/*color de letra*/
+  
+    width: 110px;
+    height: 40px;
+  
+    padding: 0 20px;
+    background:#5cb85c ;/*cloo del boton adentro*/
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% auto;
+    letter-spacing: 0.05em;
+}
+
+
+
+
+
+
+

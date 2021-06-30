@@ -1,0 +1,44 @@
+aside, article, footer,section,nav ,header{
+display: block;
+margin: 0;
+padding: 0;
+
+}
+p,h2,h3{
+	margin: 0;
+	padding: 0;
+
+}
+html,body{
+	margin: 0;
+	padding: 0;
+}
+html{
+	background: #FFF;
+}
+body{
+	background: #fff;
+	margin: 0 auto;
+	width:1090px;
+	font-family: Verdana, Geneva, sans-serif;
+
+}
+
+article{
+	height: 460px;
+	background:#FFF;
+	width: 600px;
+	float: left;
+}
+aside{
+	height: 420;
+	background: #fff;
+	width: 360px;
+	float: right;
+	}
+footer{
+	height: 60px;
+	background: #55ffff;
+	clear: both;
+	
+}

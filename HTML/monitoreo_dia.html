@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<title>Monitoreo Día</title>
+		<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../assets/css/isotope.css" media="screen" />
+	<link rel="stylesheet" href="../assets/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	
+	<!--font awesome con CDN-->  
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">   
+	<script src="../js/modal.js"></script>
+	
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="../js/formulario-update.js"></script>
+    <script src="../js/formulario-update.js"></script>
+	<script src="../js/logout.js"></script>
+	<script src="../js/lista_cultivo.js"></script>
+	<script src="../js/user.js"></script>
+	<script src="../js/update_user.js"></script>
+
+	<style type="text/css">
+		#spin{
+			animation: spin 1s linear infinite;
+		}
+		@keyframes spin{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</style>
+</head>
+
+
+<body >
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+					<a class="navbar-brand" href="index.html">
+						<img src="../assets/images/slides/uptlogo.png" alt="Logo UPT"></a>
+						
+						
+						<img src="../imagen/itsmtsinletras.jpg" width="100" height="70" alt="logo ITSSMT">
+
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav pull-right mainNav">
+							<li>
+								<a href="../HTML/registrocultivo.html">Registro de cultivo</a></li>
+								<li>
+									<a href="../HTML/registrar_fechas.html">Registro de fechas </a></li>
+									<li >
+										<a href="../HTML/aspersion.html">Aspersión </a></li>
+										<li class="active" >
+											<a href="../HTML/monitoreo_dia.html">Monitoreo por día </a></li>
+											<li >
+												<a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a></li>
+												<li><a href="../HTML/Reportes.html">Reportes</a></li>
+
+												
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más<strong class="caret"></strong></a>
+													<ul class="dropdown-menu">
+														<li id="f"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><em class="fas fa-user"> </em> Perfil de usuario</a></li>
+														<li><a href="../HTML/historial.html"> <em class="fas fa-history"></em> Historial de Actividad </a></li>
+										
+														<li ><a id='logoutButton'onclick="javascript:$.fn.CookieCompliance.disconsent();"> <em class="fas fa-sign-out-alt"></em> Cerrar Sesión</a></li>
+
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<!--/.nav-collapse -->
+									</div>
+								</div>
+								<!-- /.navbar -->
+								
+								<header id="head" class="secondary">
+									<div class="container">
+										<h1>Monitoreo por día</h1>
+										
+									</div>
+								</header>
+								
+								
+								<!---Modal que contienela informacion del usuario-->
+								<div id="id01" class="modal">
+									<form class="modal-content animate " id="modalf" enctype="multipart/form-data">
+										<div class="imgcontainer">
+											<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+										</div>
+
+										<div class="content" id="id01" class="modal">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="card">
+															<div class="card-header">
+																<h3 class="card-title">Actualizar información del usuario</h3>
+															</div>
+															<div class="card-body">
+																
+																<div class="row">
+																	<div class="col-md-6 pr-1">
+																		<div class="form-group" >
+																			<label>Nombre:(s)</label>
+																			<input type="text" id="name" name="name" pattern="[a-zA-Z ]{2,254}"  class="form-control" required>
+
+																		</div>
+																	</div>
+
+
+
+																	<div class="col-md-6 pr-1">
+																		<div class="form-group" >
+																			<label>Matrícula ó Número de Trabajador</label>
+																			<input type="text" class="form-control" id="key" name="key" required>
+
+																		</div>
+																	</div>  
+																</div>
+
+
+
+																<div class="row">
+																	<div class="col-md-6 pr-1">
+																		<div class="form-group">
+																			<label>Apellido Paterno:</label>
+																			<input type="text" id="paternal_surname" name="paternal_surname" class="form-control" >
+																		</div>
+																	</div>
+
+																	<div class="col-md-6 pl-1">
+																		<div class="form-group">
+																			<label>Apellido Materno:</label>
+																			<input type="text" id="maternal_surname" name="maternal_surname" class="form-control"   >
+																		</div>
+																	</div>
+																</div>
+																<label> <h4>Actualizar foto de perfil</h4></label>
+																<img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="agregar imagen">
+
+																<input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required>
+
+																<br/>
+
+																
+
+																<button type="submit" id="actualizar_user" class="btn btn-info "><em class=" fas fa-user-edit"></em>Actualizar Datos</button>
+																
+																<button type="reset"  id="re"  class="btn btn-warning" value="Restaurar formualario">
+																	<em class="fas fa-trash"></em> Restaurar formulario</button>
+
+
+
+
+																	<div class="clearfix"></div>
+																	
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="card card-user">
+																<div class="card-image">
+
+																	
+																</div>
+																<div class="card-body" id="div">
+																	<div class="author">
+																		
+																		<p class="description">
+																			<DIV ALIGN=center><h3 class="card-title">Información del usuario</h3>
+
+																			
+																		</DIV>
+
+																		</p>
+																		<hr>
+																		<h3><span class="loading"><em id="spin" class="fas fa-sync"></em> Cargando...</span></h3>
+
+																	</div>
+																	<p class="description text-center">
+
+																	</p>
+																</div>
+
+																<button  type="button" class="btn btn-primary" id="backup"><em class="fas fa-cloud-download-alt"></em> Realizar respaldo </button>
+																
+																
+																<button type="button" class="btn btn-primary" id="restore" > <em class="fas fa-redo"></em> Restaurar respaldo</button>
+																
+																
+																
+																
+																
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+										
+									</div>
+									
+
+
+									<div class="go-top-container">
+										<div class="go-top-button">
+											<em style='font-size:24px' class='fas'>▲</em>
+											
+										</div>
+									</div>
+									<!--^▲ꜛ↑ᴧ↑-->
+
+
+									<div id="courses">
+										<section class="container">
+											<form id="formulario" enctype="multipart/form-data">
+												
+												
+												<div class="col-md-6 mb-4">
+													<label for="crop"><h3>Nombre del cultivo</h3></label>
+													<br>
+													<select class="seleccion" style="width:200px;" name="crop_id" id="crop_id" required>
+
+													</select>
+
+												</div>
+
+
+												<div class="col-md-3 mb-1" >
+													<label for="date"><h3>Fecha de siembra</h3></label>
+													<input type="date" class="form-control" required>
+												</div>
+												
+												<div class="col-md-3 mb-1">
+													<label for="date"><h3>Fecha de monitoreo</h3></label>
+													<input type="date" class=" form-control" id="date" required>
+												</div>
+
+
+
+
+
+												<div class="col-md-2">
+													<div class="featured-box">
+														<div class="text">
+															<h3>ph</h3>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>7:00 hrs</h3>
+																<p id="week_0ph"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>19:00 hrs</h3>
+																<p id="week_1ph"></p>
+
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>Promedio dia</h3>
+																<p id="week_2ph"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+												<div class="col-md-2">
+													<div class="featured-box">
+														<div class="text">
+															<h3>Condutividad Electrica</h3>
+
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>7:00 hrs</h3>
+																<p id="week_0conductividad"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>19:00 hrs</h3>
+																<p id="week_1conductividad"></p>
+
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>Promedio dia</h3>
+																<p id="week_2conductividad"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div class="featured-box">
+														<div class="text">
+															<h3>Humedad</h3>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>7:00 hrs</h3>
+																<p id="week_0humedad"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>19:00 hrs</h3>
+																<p id="week_1humedad"></p>
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>Promedio dia</h3>
+																<p id="week_2humedad"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div class="featured-box">
+														<div class="text">
+															<h3>Temperatura</h3>
+
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>7:00 hrs</h3>
+																<p id="week_0temperatura"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>19:00 hrs</h3>
+																<p id="week_1temperature"></p>
+
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="featured-box">
+															<div class="text">
+																<h3>Promedio dia</h3>
+																<p id="week_2temperature"></p>
+
+																
+															</div>
+	
+														</div>
+													</div>
+												<div>
+													<input style="margin-bottom:20px;" type="submit"  class="btn btn-success" id="Enviar" value="Mostrar información" >
+													
+												</div>
+											</form>
+										</section>
+										
+									</div>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									<!-- /container -->
+									<footer id="footer"  style="margin-top: -10px;">
+										<div class="container">
+											<div class="row">
+												<div class="footerbottom">
+
+
+													<div class="col-md-4 col-sm-7">
+
+
+														<div class="footerwidget">
+															<h4>Contactos</h4>
+															<p>Universidad Politécnica de Tlaxcala Región Poniente</p>
+															<div class="contact-info">
+																<em class="fa fa-map-marker"></em> Dirección: Carr. Federal México - Veracruz Km. 85, Recova, 90240 Tlax., México<br>
+																<em class="fa fa-phone"></em>Teléfono: +52 241 418 8730<br>
+																<em class="fas fa-envelope"></em>Email:información@uptlaxponiente.edu.mx
+																<div class="team-socials">
+																	<a rel="noopener noreferrer" href="https://web.facebook.com/UniversidadUPTrep/?_rdc=1&_rdr" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/UPTrepOficial?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/universidaduptrep/?igshid=k9bbnvgoqmni" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+																	
+																</div>
+
+
+
+															</div>
+														</div><!-- end widget -->
+													</div>
+													
+													
+													<div class="col-md-4 col-sm-7">
+
+
+														<div class="footerwidget">
+															<h2></h2>
+															<h1></h1>
+															<p>TecNM campus San Martín</p>
+															<div class="contact-info">
+																<em class="fa fa-map-marker"></em> Dirección: Camino a la Barranca de Pesos s/n, San Lucas Atoyatenco, 74120 San Martín Texmelucan de Labastida, Pue., México<br>
+																<em class="fa fa-phone"></em> Teléfono: +52 248 111 1132<br>
+																<em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
+																
+																<div class="team-socials">
+																<a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/tecnm_sanmartin/?igshid=18ll10a9raqods" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+
+
+																</div>
+																
+
+																
+
+
+															</div>
+														</div><!-- end widget -->
+													</div>
+
+
+
+
+												</div>
+											</div>
+											<div class="clear"></div>
+											<!--CLEAR FLOATS-->
+										</div>
+										<div class="footer2">
+											<div class="container">
+												<div class="row">
+
+													<div class="col-md-6 panel">
+														<div class="panel-body">
+															<p class="simplenav">
+																
+																<a href="../HTML/registrocultivo.html">Registro de cultivos</a> |
+																<a href="../HTML/registrar_fechas.html">Registro de fechas</a> |
+																<a href="../HTML/aspersion.html">Aspersión</a> |
+																<a href="../HTML/monitoreo_dia.html">Monitoreo por día</a>| <br>
+																<a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a> |
+																<a href="../HTML/Reportes.html">Reportes</a>
+																
+															</p>
+														</div>
+													</div>
+
+													<div class="col-md-6 panel">
+														<div class="panel-body">
+															<p class="text-right">
+																
+
+															</p>
+														</div>
+													</div>
+
+												</div>
+												<!-- /row of panels -->
+											</div>
+										</div>
+									</footer>
+
+
+									<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+									<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+									<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script>
+									 <script type="text/javascript" src="../js/subir.js"></script>
+									<script src="//code.jquery.com/jquery-latest.min.js"></script>
+									<script src="//norfipc.com/js/jquery.cookie.js"></script>
+									<script src="//norfipc.com/js/cookiecompliance.js"></script>
+
+								</body>
+
+
+					
+
+
+
+	<!--backups-->
+	<script type="text/javascript">
+		$('#backup').click(function() {
+			
+			
+			
+			$.ajax({
+				type:"GET",
+				headers:{"Authorization": "Token "+document.cookie},
+				cache:false,
+				
+				url: 'http://sistemas.smartin.tecnm.mx:443/users/backup/' ,
+				success: function(response, responseText) {
+					
+					console.log(response);
+					alert(response.msg);
+				},
+				error: function(response, textstatus, errorThrow){
+					
+					
+					alert(response.responseText);
+					
+				}
+
+			});
+			return false;
+		});
+
+
+
+	</script>
+
+	<script type="text/javascript">
+		$('#restore').click(function() {
+			
+			
+			$.ajax({
+				type:"GET",
+				headers:{"Authorization": "Token "+document.cookie},
+				cache:false,
+				url: 'http://sistemas.smartin.tecnm.mx:443/users/restore/' ,
+				success: function(response, responseText) {
+					
+					console.log(response);
+					
+					alert(response.msg);
+				},
+				error: function(response, textstatus, errorThrow){
+					
+					alert(response.responseText);
+					
+					
+					
+				}
+
+			});
+			return false;
+		});
+
+
+
+	</script>
+	<script type="text/javascript">
+		$("#formulario").on('submit', function(e) {
+			e.preventDefault();
+			var d = document.getElementById("date").value;	
+			console.log(d);
+
+			$.ajax({
+
+				headers:{"Authorization": "Token "+document.cookie},
+				cache:false,
+				url: 'http://sistemas.smartin.tecnm.mx:443/monitoring/search/'+d+'/',
+				success: function(data) {
+					console.log(data);
+					var primero = data[0];
+
+
+					var row = 	'<div>'+ 
+
+
+					'<p>'+primero.value_day.ph+'</p>'+
+
+
+					'</div>';
+
+
+					$("#week_0ph").html(row);
+					var row = 	'<div>'+ 
+
+
+					'<p>'+primero.value_day.humidity+'</p>'+
+
+
+
+					'</div>';
+
+
+					$("#week_0humedad").html(row);
+					var row = 	'<div>'+ 
+
+
+					'<p>'+primero.value_day.temperature+'</p>'+
+
+
+
+					'</div>';
+
+
+					$("#week_0temperatura").html(row);
+					var row = 	'<div>'+ 
+
+
+					'<p>'+primero.value_day.electric_conductivity+'</p>'+
+
+
+
+					'</div>';
+
+
+					$("#week_0conductividad").html(row);
+
+					var row = 	'<div>'+ 
+					'<p>'+primero.value_night.ph+'</p>'+
+
+					'</div>';
+
+					$("#week_1ph").html(row);
+
+					var row = 	'<div>'+ 
+					'<p>'+primero.value_night.temperature+'</p>'+
+
+					'</div>';
+
+					$("#week_1temperature").html(row);
+
+					var row = 	'<div>'+ 
+					'<p>'+primero.value_night.humidity+'</p>'+
+
+					'</div>';
+
+					$("#week_1humedad").html(row);
+
+					var row = 	'<div>'+ 
+					'<p>'+primero.value_night.electric_conductivity+'</p>'+
+
+					'</div>';
+
+					$("#week_1conductividad").html(row);
+
+
+                                                        //wekk2
+                                                        var row = 	'<div>'+ 
+                                                        '<p>'+primero.average_day.ph+'</p>'+
+
+                                                        '</div>';
+
+                                                        $("#week_2ph").html(row);
+                                                        var row = 	'<div>'+ 
+                                                        '<p>'+primero.average_day.temperature+'</p>'+
+
+                                                        '</div>';
+
+                                                        $("#week_2temperature").html(row);
+                                                        var row = 	'<div>'+ 
+                                                        '<p>'+primero.average_day.humidity+'</p>'+
+
+                                                        '</div>';
+
+                                                        $("#week_2humedad").html(row);
+
+                                                        var row = 	'<div>'+ 
+                                                        '<p>'+primero.average_day.electric_conductivity+'</p>'+
+
+                                                        '</div>';
+
+                                                        $("#week_2conductividad").html(row);
+
+                                                        $.each(data, function(index, valor){
+			                          
+			                          });
+                                                    },
+                     error: function(response, textstatus, errorThrow){
+					
+					console.log(response);
+
+					alert(response.responseText);
+					
+					
+					
+				}
+
+                                                });
+		});
+	</script>
+
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var id = document.getElementById("crop_id").value;
+			console.log(id);
+		$.ajax({
+			headers:{"Authorization": "Token "+document.cookie},
+				cache:false,
+			url: 'http://sistemas.smartin.tecnm.mx:443/crops/list-date/'+2+'/' ,
+			DataType:"json",
+			success: function(data) {
+			console.log(data);
+				var s = data[0];
+				console.log(s.seedtime)
+				var ot = (parseInt(s.seedtime));
+				console.log(ot);
+				if(s.seedtime > s.standby_time){
+					for(data in datas);
+						console.log(datas);
+
+				}else{
+					console.log("stand by es mayor")
+				}
+				var number_pages =[];
+				for (var i =1 ; i <=s.seedtime ;i++){
+					console.log(i);
+  					number_pages.push(i);
+  					
+  					console.log(number_pages);
+  					console.log("fechas");
+  				}
+  			
+  					console.log(number_pages);
+  					console.log("fechas");
+
+				
+
+			},
+
+		});	});
+	</script>
+	
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+	<title>Reportess</title>
+	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<!--Estilos personalizados para nuestra plantilla -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../assets/css/isotope.css" media="screen" />
+	<link rel="stylesheet" href="../assets/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	<!--font awesome con CDN-->  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">   
+
+<script src="../js/modal.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="../js/formulario-update.js"></script>
+	<script src="../js/logout.js"></script>
+	<script src="../js/user.js"></script>
+	<script src="../js/update_user.js"></script>
+ 
+	<style type="text/css">
+		#spin{
+			animation: spin 1s linear infinite;
+		}
+		@keyframes spin{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!--Botón para pantallas más pequeñas -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+					<a class="navbar-brand" href="index.html">
+						<img src="../assets/images/slides/uptlogo.png" alt="Logo Upt "></a>
+						
+						<img src="../imagen/itsmtsinletras.jpg" width="100" height="70" alt="logo ITSSMT">
+
+
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav pull-right mainNav">
+							<li>
+								<a href="../HTML/registrocultivo.html">Registro de cultivo</a></li>
+								<li>
+									<a href="../HTML/registrar_fechas.html">Registro de fechas </a></li>
+									<li >
+										<a href="../HTML/aspersion.html">Aspersion </a></li>
+										<li >
+											<a href="../HTML/monitoreo_dia.html">Monitoreo por día </a></li>
+											<li >
+												<a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a></li>
+
+												<li class="active">
+													<a href="../HTML/Reportes.html">Reportes </a></li>
+													
+													
+													<li class="dropdown" >
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más<strong class="caret"></strong></a>
+														<ul class="dropdown-menu">
+															<li id="f"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><em class="fas fa-user"> </em> Perfil de usuario</a></li>
+															
+															<li><a href="../HTML/historial.html"> <em class="fas fa-history"></em> Historial de Actividad </a></li>
+										
+
+
+
+															<li ><a id='logoutButton'onclick="javascript:$.fn.CookieCompliance.disconsent();"> <em class="fas fa-sign-out-alt"></em> Cerrar Sesión</a></li>
+														</ul>
+													</li>
+													
+													
+													
+												</ul>
+											</div>
+											<!--/.nav-collapse -->
+										</div>
+									</div>
+									<!-- /.navbar -->
+
+									<header id="head" class="secondary">
+										<div class="container">
+											<h1>Reportes</h1>
+											<p></p>
+										</div>
+									</header>
+
+									<!---Modal que contienela informacion del usuario-->
+									<div id="id01" class="modal">
+										<form class="modal-content animate " id="modalf" enctype="multipart/form-data">
+											<div class="imgcontainer">
+												<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+											</div>
+
+											<div class="content" id="id01" class="modal">
+												<div class="container-fluid">
+													<div class="row">
+														<div class="col-md-6">
+															<div class="card">
+																<div class="card-header">
+																	<h3 class="card-title">Actualizar información del usuario</h3>
+																</div>
+																<div class="card-body">
+																	
+																	<div class="row">
+																		<div class="col-md-6 pr-1">
+																			<div class="form-group" id="name">
+																				<label>Nombre:(s)</label>
+																				<input type="text" pattern="[a-zA-Z ]{2,254}" id="name" name="name" class="form-control" required>
+
+																			</div>
+																		</div>
+
+
+
+																		<div class="col-md-6 pr-1">
+																			<div class="form-group" id="name">
+																				<label>Matrícula ó Número de Trabajador</label>
+																				<input type="text" class="form-control" id="key" name="key" required>
+
+																			</div>
+																		</div>  
+																	</div>
+
+
+
+																	<div class="row">
+																		<div class="col-md-6 pr-1">
+																			<div class="form-group">
+																				<label>Apellido Paterno:</label>
+																				<input type="text" id="paternal_surname" name="paternal_surname" class="form-control" required>
+																			</div>
+																		</div>
+
+																		<div class="col-md-6 pl-1">
+																			<div class="form-group">
+																				<label>Apellido Materno:</label>
+																				<input type="text" id="maternal_surname" name="maternal_surname" class="form-control" required >
+																			</div>
+																		</div>
+																	</div>
+																	<label> <h4>Actualizar foto de perfil</h4></label>
+																	<img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen">
+
+																	<input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required>
+
+																	<br/>
+
+																	
+
+																	<button type="submit" id="actualizar_user" class="btn btn-info "><em class=" fas fa-user-edit"></em>Actualizar Datos</button>
+																	
+																	<button type="reset"  id="re"  class="btn btn-warning" value="Restaurar formualario">
+																		<em class="fas fa-trash"></em> Restaurar formulario</button>
+
+
+
+
+																		<div class="clearfix"></div>
+																		
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="card card-user">
+																	<div class="card-image">
+																		
+																	</div>
+																	<div class="card-body" id="div">
+																		<div class="author">
+																			
+																			<p class="description">
+																				<DIV ALIGN=center><h3 class="card-title">Información del usuario</h3></DIV>
+
+																			</p>
+																			<hr>
+																			<h3><span class="loading"><em id="spin" class="fas fa-sync"></em> Cargando...</span></h3>
+
+																		</div>
+																		<p class="description text-center">
+
+																		</p>
+
+
+																	</div>
+
+
+
+															
+																	
+																	<button  type="button" class="btn btn-primary" id="backup"><em class="fas fa-cloud-download-alt"></em> Realizar respaldo </button>
+																	
+																	
+																	<button type="button" class="btn btn-primary" id="restore" > <em class="fas fa-redo"></em> Restaurar respaldo</button>
+																	
+																	
+																	
+																	
+																	
+																	
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</form>
+											
+										</div>
+										<div class="go-top-container">
+											<div class="go-top-button">
+												<em style='font-size:24px' class='fas'>▲</em>
+												
+											</div>
+										</div>
+										<!--^▲ꜛ↑ᴧ↑-->
+
+
+
+										
+										<div class="portfolio-items isotopeWrapper clearfix" id="3">
+											<article class="col-sm-6 isotopeItem photography" >
+												<div class="portfolio-item" >
+													<img src="../imagen/graficos1.jpg" style="margin-left:60px;"alt="Imagen graficas"  width="100" height="300" />
+													<div class="portfolio-desc align-center">
+														<div class="folio-info">
+															<a href="../HTML/graficas.html" class="fancybox">
+																<h5 style="color: black;">Gráficas</h5>
+																<em class="fa fa-link fa-2x"></em></a>
+															</div>
+														</div>
+													</div>
+												</article>
+
+												<article class="col-sm-6 isotopeItem photography">
+													<div class="portfolio-item">
+		<img src="../imagen/reporte.jpg" alt="imagen Reportes" style="width: 70%;margin-left:40px;" />
+														<div class="portfolio-desc align-center">
+															<div class="folio-info">
+																<a href="../HTML/tablas.html" class="fancybox">
+																	<h5 style="color: black;">Reportes</h5>
+																	<em class="fa fa-link fa-2x"></em></a>
+																</div>
+															</div>
+														</div>
+													</article>
+
+
+													
+
+
+
+												</div>
+												<!-- /container -->
+												<footer id="footer" style="margin-top: -10px">
+													<div class="container">
+														<div class="row">
+															<div class="footerbottom">
+
+
+																<div class="col-md-4 col-sm-7">
+
+
+																	<div class="footerwidget">
+																		<h4>Contactos</h4>
+																		<p>Universidad Politécnica de Tlaxcala Región Poniente</p>
+																		<div class="contact-info">
+																			<em class="fa fa-map-marker"></em> Dirección: Carr. Federal México - Veracruz Km. 85, Recova, 90240 Tlax., México<br>
+																			<em class="fa fa-phone"></em>Teléfono: +52 241 418 8730<br>
+																			<em class="fas fa-envelope"></em>Email:información@uptlaxponiente.edu.mx
+																			<div class="team-socials">
+																				<a rel="noopener noreferrer" href="https://web.facebook.com/UniversidadUPTrep/?_rdc=1&_rdr" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/UPTrepOficial?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/universidaduptrep/?igshid=k9bbnvgoqmni" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+																				
+																			</div>
+
+
+
+																		</div>
+																	</div><!-- end widget -->
+																</div>
+																
+																
+																<div class="col-md-4 col-sm-7">
+
+
+																	<div class="footerwidget">
+																		<h2></h2>
+																		<h1></h1>
+																		<p>TecNM campus San Martín</p>
+																		<div class="contact-info">
+																			<em class="fa fa-map-marker"></em> Dirección: Camino a la Barranca de Pesos s/n, San Lucas Atoyatenco, 74120 San Martín Texmelucan de Labastida, Pue., México<br>
+																	<em class="fa fa-phone"></em> Teléfono: +52 248 111 1132<br>
+																	<em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
+																	
+																	<div class="team-socials">
+																		<a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/tecnm_sanmartin/?igshid=18ll10a9raqods" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+
+																		
+
+																			</div>
+																			
+
+																			
+
+
+																		</div>
+																	</div><!-- end widget -->
+																</div>
+
+
+
+
+															</div>
+														</div>
+														<div class="clear"></div>
+														<!--CLEAR FLOATS-->
+													</div>
+													<div class="footer2">
+														<div class="container">
+															<div class="row">
+
+																<div class="col-md-6 panel">
+																	<div class="panel-body">
+																		<p class="simplenav">
+																			<a href="../HTML/registrocultivo.html">Registro de cultivos</a> |
+																			<a href="../HTML/registrar_fechas.html">Registro de fechas</a> |
+																			<a href="../HTML/aspersion.html">Aspersión</a> |
+																			<a href="../HTML/monitoreo_dia.html">Monitoreo por día</a>| <br>
+																			<a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a> |
+																			<a href="../HTML/Reportes.html">Reportes</a>
+																			
+																		</p>
+																	</div>
+																</div>
+
+																<div class="col-md-6 panel">
+																	<div class="panel-body">
+																		<p class="text-right">
+																			
+
+																		</p>
+																	</div>
+																</div>
+
+															</div>
+															<!-- /row of panels -->
+														</div>
+													</div>
+												</footer>
+
+
+												<!-- Las bibliotecas de JavaScript se colocan al final del documento para que las páginas se carguen más rápido -->
+												<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+												<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script>
+												<script src="assets/js/jquery.cslider.js"> </script>
+												<script src="assets/js/jquery.isotope.min.js"> </script>
+												<script src="assets/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"> </script>
+												<script src="assets/js/custom.js"> </script>
+												<script src="//code.jquery.com/jquery-latest.min.js"></script>
+												<script src="//norfipc.com/js/jquery.cookie.js"></script>
+												<script src="//norfipc.com/js/cookiecompliance.js"></script>
+												<script type="text/javascript" src="../js/subir.js"></script>
+											</body>
+
+											
+
+
+<!--backups-->
+<script type="text/javascript">
+	$('#backup').click(function() {
+		
+		
+		
+		$.ajax({
+			type:"GET",
+				cache:false,
+			headers:{"Authorization": "Token "+document.cookie},
+
+			
+			url: 'http://sistemas.smartin.tecnm.mx:443/users/backup/' ,
+			success: function(response, responseText) {
+				
+				console.log(response);
+				alert(response.msg);
+			},
+			error: function(response, textstatus, errorThrow){
+				
+				alert(response.responseText);
+			}
+
+		});
+		return false;
+	});
+
+
+
+</script>
+
+<script type="text/javascript">
+	$('#restore').click(function() {
+		
+		
+		$.ajax({
+			type:"GET",
+				cache:false,
+			headers:{"Authorization": "Token "+document.cookie},
+			url: 'http://sistemas.smartin.tecnm.mx:443/users/restore/',
+			success: function(response, responseText) {
+				
+				console.log(response);
+				
+				alert(response.msg);
+			},
+			error: function(response, textstatus, errorThrow){
+				
+				alert(response.responseText);
+				
+				
+			}
+
+		});
+		return false;
+	});
+
+
+
+</script>
+
+
+
+
+
+
+</html>
+

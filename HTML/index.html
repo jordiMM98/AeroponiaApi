@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Inicio de sesión</title>
+	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="../HTML/login/css/login.css">
+
+	<!--font awesome con CDN-->  
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"> 
+		
+
+	
+
+</head>
+
+<body>
+<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+
+				<a class="navbar-brand" href="index.html"><img src="../assets/images/slides/uptlogo.png" ></a>
+				
+				<img src="../imagen/itsmtsinletras.jpg" width="100" height="70" alt="logo ITSSMT">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+					
+					
+					
+					
+				</div>
+
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav pull-right mainNav">
+								<li ><a href="../index.html">inició </a></li>
+						<li ><a href="registrarusuario.html"><em class="fa fa-user-plus" aria-hidden="true"></em> Registrar Usuario </a></li>
+
+						<li class="active"><a href="index.html">
+							<em class="fas fa-sign-in-alt"></em> Iniciar sesión </a></li>
+
+						</ul>
+							</div>
+							<!--/.nav-collapse -->
+						</div>
+					</div>
+					<!-- /.navbar -->
+
+
+					
+
+					<div class="overlay">
+						
+					
+							<!-- LOGN IN FORM by Omar Dsoky -->
+							<form id="login_form"  enctype="multipart/form-data" >
+							
+								<div class="con">
+									<!--     Start  header Content  -->
+									<header class="head-form" >
+										<h2>
+										Iniciar sesión</h2>
+										<!--     A welcome message or an explanation of the login form -->
+										<p>
+										Inicie sesión  con su nombre de usuario y contraseña</p>
+									</header>
+									<!--     End  header Content  -->
+									<br>
+									<!--<div class="container">-->
+
+
+
+
+										<div class="field-set">
+
+											<!--   user name -->
+											<span class="input-item">
+												
+												<em class="fa fa-user-circle" title="Nombre de usuario" aria-hidden="true"></em>
+											</span>
+											<!--   user name Input-->
+											<input class="form-input" id="username" name="username" type="text" placeholder="Nombre de usuario" minlength="3" required >
+											
+
+
+
+											<br>
+
+											<!--   Password -->
+
+											<span class="input-item">
+												<em class="fa fa-key" title="Contraseña"></em>
+											</span>
+											<!--   Password Input-->
+											<input class="form-input" type="password" placeholder="Contraseña" id="password" minlength="8" name="password" required>
+
+											<!--      Show/hide password  -->
+											<span>
+												<em class="fa fa-eye" aria-hidden="true" title="Mostrar/Ocultar contraseña" type="button" id="eye"></em>
+											</span>
+											<br>
+
+
+											<br>
+											<!--        buttons -->
+											<!--      button LogIn -->
+											<button type="submit" id="enviar" class="btn btn-success" title="Llene todos los campos e incie sesión"> Iniciar sesión </button>
+											<br />
+											<p class="login__signup">
+												¿No tienes una cuenta? &nbsp; <a id="plus" title="Crear una nueva cuenta" href="../HTML/registrarusuario.html">Crear cuenta nueva <em id="plus" class="fa fa-user-plus"  aria-hidden="true"></em> </a></p>
+
+
+											</div>
+
+											<!--   other buttons -->
+											<div class="other">
+											<!--      Forgot Password button-->
+
+											<!--     Sign Up button -->
+
+
+											<!--         Sign Up font icon -->
+											
+
+											<!--      End Other the Division -->
+										</div>
+
+										<!--   End Conrainer  -->
+									</div>
+
+									<!-- End Form -->
+
+								</form>
+						</div>
+			
+
+
+
+
+
+
+				<footer id="footer">
+
+<div class="container">
+			<div class="row">
+				<div class="footerbottom">
+
+
+					<div class="col-md-4 col-sm-7">
+
+
+						<div class="footerwidget">
+							<h4>Contactos</h4>
+							<p>Universidad Politécnica de Tlaxcala Región Poniente</p>
+							<div class="contact-info">
+							 <em class="fa fa-map-marker"></em> Dirección: Carr. Federal México - Veracruz Km. 85, Recova, 90240 Tlax., México<br>
+                                  <em class="fa fa-phone"></em>Teléfono: +52 241 418 8730<br>
+                                  <em class="fas fa-envelope"></em>Email:información@uptlaxponiente.edu.mx
+                                  <div class="team-socials">
+                                  <a rel="noopener noreferrer" href="https://web.facebook.com/UniversidadUPTrep/?_rdc=1&_rdr" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/UPTrepOficial?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/universidaduptrep/?igshid=k9bbnvgoqmni" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+													
+							 	  
+                        </div>
+
+
+
+							</div>
+						</div><!-- end widget -->
+					</div>
+					
+					
+					<div class="col-md-4 col-sm-7">
+
+
+						<div class="footerwidget">
+							<h2></h2>
+							<h1></h1>
+							<p>TecNM campus San Martín</p>
+							<div class="contact-info">
+								<em class="fa fa-map-marker"></em> Dirección: Camino a la Barranca de Pesos s/n, San Lucas Atoyatenco, 74120 San Martín Texmelucan de Labastida, Pue., México<br>
+              <em class="fa fa-phone"></em> Teléfono: +52 248 111 1132<br>
+              <em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
+              
+              <div class="team-socials">
+                <a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+													<a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+													<a rel="noopener noreferrer" href="https://www.instagram.com/tecnm_sanmartin/?igshid=18ll10a9raqods" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+
+							 	  
+
+                        </div>
+								
+
+								
+
+
+							</div>
+						</div><!-- end widget -->
+					</div>
+
+
+
+
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!--CLEAR FLOATS-->
+		</div>>
+					<div class="footer2">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-6 panel">
+									<div class="panel-body">
+										<p class="simplenav">
+											<a href="../index.html">Inicio</a> |
+											<a href="../HTML/registrarusuario.html"><em class="fa fa-user-plus" aria-hidden="true"></em> Registrar usuarios</a> |
+							<a href="../HTML/index.html"> <em class="fas fa-sign-in-alt" ></em> Iniciar Sesión</a> 
+
+										</p>
+									</div>
+								</div>
+
+								<div class="col-md-6 panel">
+									<div class="panel-body">
+										<p class="text-right">
+											Copyright &copy; 2020.
+
+										</p>
+									</div>
+								</div>
+
+							</div>
+							<!-- /row of panels -->
+						</div>
+					</div>
+				</footer>
+
+
+				<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+				
+			</body>
+			</html>
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+				<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script>
+				<script src="assets/js/custom.js"> </script>
+
+
+<script>//modtrar contraeña
+function show() {
+	var p = document.getElementById('password');
+	p.setAttribute('type', 'text');
+}
+
+function hide() {
+	var p = document.getElementById('password');
+	p.setAttribute('type', 'password');
+}
+
+var pwShown = 0;
+
+document.getElementById("eye").addEventListener("click", function () {
+	if (pwShown == 0) {
+		pwShown = 1;
+		show();
+	} else {
+		pwShown = 0;
+		hide();
+	}
+}, false);
+
+</script>
+
+
+
+<script>
+	$(document).ready(function(){
+		$("#login_form").bind("submit",function(){
+
+			$.ajax({
+				type:"post",//los datos los somete a procesar un recurso especifico
+				url: "http://sistemas.smartin.tecnm.mx:443/users/login/",
+				cache:false,
+				data: $(this).serialize(), //sereliza el formulario 
+				success: function(response, responseText){//contiene el contenido resultante  si la llamada se realiza satisfactoriente
+				
+					var token = response.token;//creamos una variable para obtener el token
+					document.cookie =  token;//creamos una cookie y le agregamos el token que obtuvimos en la variable 
+					alert("Se inicio sesión correctamente");
+					window.location.href = "../HTML/registrocultivo.html";
+				},
+				error: function(res, textstatus, errorThrow){//llamamos una funcion de callback  despues de procesar la funcion
+					alert(res.responseJSON.detail);
+				
+
+				},
+			});
+			return false;
+		});
+
+	});
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	///no ctocr es rchivo externo
+	 $("#login-button").click(function(event){
+		 event.preventDefault();
+	 
+	 $('form').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+});
+</script>
+
+
+
+
+
+
+
+
+
+

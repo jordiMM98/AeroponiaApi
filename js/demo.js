@@ -168,7 +168,7 @@ demo = {
     initDashboardPageCharts: function() {
         $("#formualario").on('submit', function(e) {
      e.preventDefault();
-    var d = document.getElementById("date").value;  
+    var d = document.getElementById("datee").value;  
         
           $.ajax({
 

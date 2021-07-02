@@ -36,6 +36,8 @@
 	<script src="../js/user.js"></script>
 	<script src="../js/subir.js"></script>
 	<script src="../js/update_user.js"></script>
+	<script src="../js/fechasiembra.js"></script>
+	<script src="../js/modal.js"></script>
 
 
 <script src="../js/modal.js"></script>
@@ -89,7 +91,7 @@
 											<a href="../HTML/monitoreo_dia.html">Monitoreo por día </a></li>
 											<li >
 												<a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a></li>
-												<li><a href="../HTML/Reportes.html">Reportes</a></li>
+												<li class="active"><a href="../HTML/Reportes.html">Reportes</a></li>
 
 
 
@@ -257,50 +259,32 @@
 									</div>
 									<!--^▲ꜛ↑ᴧ↑-->
 									<form id="formualario">
+										<div class="col-md-3 mb-1">
+											<label for="crop"><h3>Seleccione el cultivo</h3></label>
+											<br>
+											<select class="seleccion"name="crop_id" id="crop_id" required >
 
-									<div class="col-md-6 mb-5">
-										<div class="featured-box">
-											<div class="text">
-												<h3><label for="name_crop">
-													<h3>Seleccione el cultivo</h3></label>
-													<br>
-													<select class="caja" style="width:200px;" name="crop_id" id="crop_id" required>
-													</select></h3>
-												</div>
-											</div>
+											</select>
+
+										</div>
+										<div class="col-md-3 mb-1" >
+											<label for="date"><h3>Fecha de siembra</h3></label>
+											<input type="date" class="seedtime form-control" id="datee"  required>
+										</div>
+
+										<div class="col-md-3 mb-1">
+											<label for="date"><h3>Fecha de monitoreo</h3></label>
+											<input type="date" class="form-control" id="date" required>
+										</div>
+										<div class="col-md-3 mb-6">
+											<input type="submit" style="margin-top: 72px;width: 138px;
+											height: 40px;padding: 0 10px; " class="btn btn-success btn-sm" id="Enviar" value="Mostrar información" >
 										</div>
 
 
+										<button type="button" style="margin-left: 120px;"  class="fas fa-file-pdf" title="Exportar a PDF" id="pdf"flex="1"></button>
 
-
-
-
-										<div class="col-md-3 mb-5">
-											<div class="featured-box">
-												<div class="text">
-													<h3><label for="name_crop">
-														<h3>Fecha de siembra</h3></label>
-														<input type="date" name="register_date"id="date" required>
-													
-
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 mb-5">
-											<div class="featured-box">
-												<div class="text">
-													<h3><label for="name_crop">
-														<h3>Fecha de reporte</h3></label>
-													<input type="date" name="register_date" required >
-													
-
-													</div>
-												</div>
-											</div>
-
-											<button type="button"  class="fas fa-file-pdf" title="Exportar a PDF" id="pdf"flex="1"></button>
-
-											<button type="button" class="fas fa-file-excel"  title="Exportar a Excel" id="excel" value="Submit" ></button>
+										<button type="button" class="fas fa-file-excel"  title="Exportar a Excel" id="excel" value="Submit" ></button>
 
 
 											<div class="container">
@@ -567,8 +551,7 @@
 		$('#logoutButton').click(function() {
 			console.log("Intentando cerrar Sesión");
 			$.ajax({
-		// headers:  {"Authorization":"token c2df6e5c78ad50198912e5559f16de58e180eb79"},
-			//headers: {"Authorization": +"token"+ document.cookie},
+		
 		headers:{"Authorization": "Token "+document.cookie},
 			
 				cache:false,
@@ -586,7 +569,7 @@
 			error: function(response, textstatus, errorThrow){
 				
 				console.log(response.responseText);
-				alert("Ocurrio un error intentelo de nuevo");
+				
 				
 			}
 
@@ -819,11 +802,8 @@ document.write('</div>');
 </script>
 <script type="text/javascript">
 $("#formualario").on('submit', function(e) {
-						e.preventDefault();
-		var d = document.getElementById("date").value;	
-				
-	
-
+	e.preventDefault();
+		var d = document.getElementById("datee").value;	
 
 											$.ajax({
 													cache:false,
@@ -906,6 +886,69 @@ $("#formualario").on('submit', function(e) {
 
 											});	});
 	
+</script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+	
+<script type="text/javascript">
+	
+var timeout;
+document.onmousemove = function(){ 
+    clearTimeout(timeout); 
+    contadorSesion(); //aqui cargamos la funcion de inactividad
+} 
+
+function contadorSesion() {
+    timeout = setTimeout(function () {
+        $.confirm({
+            title: 'Alerta de Inactividad!',
+            content: 'La sesión esta a punto de expirar.',
+            autoClose: 'expirar|20000',//cuanto tiempo necesitamos para cerrar la sess automaticamente
+            type: 'red',
+            icon: 'fa fa-spinner fa-spin',
+            buttons: {
+                expirar: {
+                    text: 'Cerrar Sesión',
+                    btnClass: 'btn-red',
+                    action: function () {
+                        $.alert('La sesión ha expirado');
+                        $.ajax({
+                            cache:false,
+                            headers:{"Authorization": "Token "+document.cookie},
+                            type:"GET",
+                            url: "http://sistemas.smartin.tecnm.mx:443/users/logout/",
+                            success: function(response, responseText){
+                                document.cookie.split(';').forEach(function(c) { document.cookie = c.trim().split('=')[0] + '=;' + 'expires=Thu, 01 Jan 1970 00:00:00 UTC;'; }); 
+
+                                window. location. href = "../index.html";
+
+                                console.log(response);
+                                alert(response.message);
+
+                            },
+                            error: function(response, textstatus, errorThrow){
+
+                                console.log(response.responseText);
+                                alert("Ocurrio un error intentelo de nuevo");
+
+                            }
+
+                        });
+                        return false;
+                        
+                    }
+                },
+                permanecer: function () {
+                    contadorSesion(); //reinicia el conteo
+                    $.alert('La Sesión ha sido reiniciada!'); //mensaje
+                    window.location.href = window.location;
+                }
+            }
+        });
+    }, 900000);//3 segundos para no demorar tanto 
+}
+
 </script>
 
 

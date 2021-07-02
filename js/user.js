@@ -31,12 +31,9 @@
 			cache: false,
 			
 			success: function(data) {
-				
-				
-
 
 					var row = "<div>"+
-					'<p style="color:black;">Foto de perfil </p>'+'<img style="width:150px; height:150px; border-radius:150px;" src="'+"http://sistemas.smartin.tecnm.mx:443/"+data.image+'" />'+
+					'<p style="color:black;">Foto de perfil </p>'+'<img style="width:150px; height:150px; border-radius:150px;" src="'+"http://sistemas.smartin.tecnm.mx:443/"+data.image + '"/>'+
 					//https://reqres.in/img/faces/2-image.jpg
 					//https://reqres.in/img/faces/9-image.jpg
 
@@ -52,7 +49,17 @@
 
 					"</div>";
 
+
 					$("#div>p").append(row);
+
+
+					 
+                              
+
+
+					
+
+
 
 
 

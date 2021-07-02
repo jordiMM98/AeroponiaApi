@@ -20,22 +20,24 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">  
 
 	
-	
+
 	
 	<link rel='stylesheet' id='camera-css'  href='../assets/css/camera.css' type='text/css' media='all'> 
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
-<script src="../js/modal.js"></script>
+	<script src="../js/modal.js"></script>
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="../js/formulario-update.js"></script>
-<script src="../js/logout.js"></script>
-<script src="../js/user.js"></script>
-<script src="../js/update_user.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="../js/formulario-update.js"></script>
+	<script src="../js/logout.js"></script>
+	<script src="../js/user.js"></script>
+	<script src="../js/update_user.js"></script>
+	<script src="../js/autoclose.js"></script>
+
 
 	<style type="text/css">
 		#spin{
@@ -118,7 +120,7 @@
 				<header id="head" class="secondary">
 					<div class="container" style="margin-bottom: 20px;">
 						<h1>Registro de cultivos</h1>
-					
+						
 					</div>
 				</header>
 
@@ -181,7 +183,7 @@
 												<label> <h4>Actualizar foto de perfil</h4></label>
 												<img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen">
 
-												<input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required>
+												<input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" src="../imagen/add.png" required>
 
 												<br/>
 
@@ -463,7 +465,7 @@
 												<em class="fa fa-map-marker"></em> Dirección: Camino a la Barranca de Pesos s/n, San Lucas Atoyatenco, 74120 San Martín Texmelucan de Labastida, Pue., México<br>
 												<em class="fa fa-phone"> </em> Teléfono: +52 248 111 1132<br>
 												<em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
-											
+												
 												<div class="team-socials">
 													<a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
 													<a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
@@ -537,7 +539,14 @@
 					<script src="//code.jquery.com/jquery-latest.min.js"></script>
 					<script src="//norfipc.com/js/jquery.cookie.js"></script>
 					<script src="//norfipc.com/js/cookiecompliance.js"></script>
-						 <script type="text/javascript" src="../js/subir.js"></script>
+					<script type="text/javascript" src="../js/subir.js"></script>
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+					
+
 
 				</body>
 
@@ -597,7 +606,7 @@
 						var myjson = JSON.stringify(nuevocultivo);
 
 						$.ajax({
-           headers:{"Authorization": "Token "+document.cookie},
+							headers:{"Authorization": "Token "+document.cookie},
            url: "http://sistemas.smartin.tecnm.mx:443/crops/create-crop/" ,// cadena que tine la url a caragr de la API(obligatoria)
            method: "POST",///los datos los somete a procesar un recurso especifico
            data: myjson, //sereliza el formulario  
@@ -626,7 +635,7 @@
            error: (jqXHR, textStatus, errorThrow) => { //llamamos una funcion de callback  despues de procesar la funcion
            	console.log(jqXHR.responseText);
            	alert(jqXHR.responseText);
-           
+           	
            	$('#name_crop').val('');
            	$('#minimum_ph').val('');
            	$('#optimum_ph').val('');
@@ -648,68 +657,98 @@
 
 
 
-	<!--backups-->
-	<script type="text/javascript">
-		$('#backup').click(function() {
-			
-			
-			
-			$.ajax({
-				type:"GET",
-					cache:false,
-				headers:{"Authorization": "Token "+document.cookie},
+				<!--backups-->
+				<script type="text/javascript">
+					$('#backup').click(function() {
+						
+						
+						
+						$.ajax({
+							type:"GET",
+							cache:false,
+							headers:{"Authorization": "Token "+document.cookie},
 
+							
+							url: 'http://sistemas.smartin.tecnm.mx:443/users/backup/' ,
+							success: function(response, responseText) {
+								
+								console.log(response);
+								alert(response.msg);
+							},
+							error: function(response, textstatus, errorThrow){
+								
+								alert(response.responseText);
+							}
+
+						});
+						return false;
+					});
+
+
+
+				</script>
+
+				<script type="text/javascript">
+					$('#restore').click(function() {
+						
+						
+						$.ajax({
+							type:"GET",
+							headers:{"Authorization": "Token "+document.cookie},
+							url: 'http://sistemas.smartin.tecnm.mx:443/users/restore/',
+							success: function(response, responseText){
+								
+								console.log(response);
+								
+								alert(response.msg);
+							},
+							error: function(response, textstatus, errorThrow){
+								
+								alert(response.responseText);
+								
+								
+							}
+
+						});
+						return false;
+					});
+				</script>
 				
-				url: 'http://sistemas.smartin.tecnm.mx:443/users/backup/' ,
-				success: function(response, responseText) {
-					
-					console.log(response);
-					alert(response.msg);
-				},
-				error: function(response, textstatus, errorThrow){
-					
-					alert(response.responseText);
-				}
 
-			});
-			return false;
-		});
+				<script type="text/javascript">
+		/*
+		$( document ).ready(function() {
+    $.confirm({
+       title: 'Alerta!',
+        content: 'La sesión esta por expirar.',
+        autoClose: 'expirar|30000',
+        type: 'red',
+        icon: 'fa fa-spinner fa-spin',
+        buttons: {
+            expirar: {
+                text: 'cerrar sesión',
+                btnClass: 'btn-red',
+                action: function () {
+                    $.alert('La sesión ha expirado');
+                    //tu codigo AJAX                    
+                }
+            },
+             permanecer: function () {
+                    contadorSesion(); //reinicia el conteo
+                    $.alert('La Sesión ha sido reiniciada!'); //mensaje
+                    window.location.href = base_url + "dashboard";
+                },
 
+            cancelar: function () {
+                $.alert('cancelado');
+            }
+        }
+    });
+},10000);
 
+*/
 
-	</script>
-
-	<script type="text/javascript">
-		$('#restore').click(function() {
-			
-			
-			$.ajax({
-				type:"GET",
-				headers:{"Authorization": "Token "+document.cookie},
-				url: 'http://sistemas.smartin.tecnm.mx:443/users/restore/',
-				success: function(response, responseText){
-					
-					console.log(response);
-					
-					alert(response.msg);
-				},
-				error: function(response, textstatus, errorThrow){
-					
-					alert(response.responseText);
-					
-					
-				}
-
-			});
-			return false;
-		});
-
-
-
-
-
-
-	</script>
+</script>
 
 
 

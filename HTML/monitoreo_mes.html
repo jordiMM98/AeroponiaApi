@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="../assets/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" href="../css/modal.css">
+	<script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
 	
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="../js/formulario-update.js"></script>
@@ -23,6 +24,8 @@
 	<script src="../js/lista_cultivo.js"></script>
 	<script src="../js/user.js"></script>
 	<script src="../js/update_user.js"></script>
+	<script src="../js/fechasiembra.js"></script>
+	<script src="../js/autoclose.js"></script>
  
 	<!--font awesome con CDN-->  
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">  
@@ -41,6 +44,13 @@
 				transform: rotate(360deg);
 			}
 		}
+		#enviar{
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+}
 	</style>
 
 </head>
@@ -157,7 +167,7 @@
 																<label> <h4>Actualizar foto de perfil</h4></label>
 																<img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen">
 
-																<input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required>
+																<input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" src="../imagen/add.png" required>
 
 																<br/>
 
@@ -237,10 +247,10 @@
 											<form id="formulario" enctype="multipart/form-data">
 												
 												
-												<div class="col-md-6 mb-4">
+												<div class="col-md-3 mb-1">
 													<label for="crop"><h3>Seleccione el cultivo</h3></label>
 													<br>
-													<select class="seleccion" style="width:200px;" name="crop_id" id="crop_id" required >
+													<select class="seleccion"name="crop_id" id="crop_id" required >
 
 													</select>
 
@@ -249,12 +259,16 @@
 
 												<div class="col-md-3 mb-1" >
 													<label for="date"><h3>Fecha de siembra</h3></label>
-													<input type="date" class="form-control" id="date" required>
+													<input type="date" class="seedtime  form-control" id="datee" required>
 												</div>
 												
 												<div class="col-md-3 mb-1">
 													<label for="date"><h3>Fecha de monitoreo</h3></label>
-													<input type="date" class="form-control" required>
+													<input type="date" class="form-control" id="date"required>
+												</div>
+												<div class="col-md-3 mb-6">
+													<input type="submit" style="margin-top: 72px;width: 138px;
+    												height: 40px;padding: 0 10px; " class="btn btn-success btn-sm" id="Enviar" value="Mostrar información" >
 												</div>
 												
 
@@ -491,7 +505,7 @@
 															</div>
 														</div>
 													</div>
-													<input type="submit" style="margin-bottom:20px;" class="btn btn-success" id="Enviar" value="Mostrar información" >
+
 												</div>
 											</form>
 										</section>
@@ -607,7 +621,10 @@
 									<script src="//code.jquery.com/jquery-latest.min.js"></script>
 									<script src="//norfipc.com/js/jquery.cookie.js"></script>
 									<script src="//norfipc.com/js/cookiecompliance.js"></script>
-									 <script type="text/javascript" src="../js/subir.js"></script>
+									<script type="text/javascript" src="../js/subir.js"></script>
+									<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+									<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 									
 								</body>
 
@@ -677,8 +694,9 @@
 	<script type="text/javascript"> 
 		$("#formulario").on('submit', function(e) {
 		e.preventDefault();
-		var d = document.getElementById("date").value;	
+		var d = document.getElementById("datee").value;	
 		var id = document.getElementById("crop_id").value;
+		console.log(id);
 	$.ajax({
 		headers:{"Authorization": "Token "+document.cookie},
 		url: 'http://sistemas.smartin.tecnm.mx:443/monitoring/average/'+id+'/'+ d+'/month/',
@@ -692,7 +710,7 @@
          success: function(data) {
          console.log(data);
          console.log(d);
-			var valor = document.getElementById("date").value;
+			var valor = document.getElementById("datee").value;
 
 			var row = '<div>'+ '<p>'+data.week_0.ph+'</p>'+	'</div>';
 			 $("#week_0ph").html(row);

@@ -1,19 +1,17 @@
 		$(document).ready(function(){
-			$("#modalf").on('submit', function(e) {
-        e.preventDefault();
+			$("#modalf").bind('submit', function() {
+        
         $.ajax({
          headers:{"Authorization": "Token "+document.cookie},
          url: "http://sistemas.smartin.tecnm.mx:443/users/update_user/" ,
          method: "Put",
          data: new FormData(this),
-         contentType: false,
          cache: false,
-         processData: false,
          success: (response,jqXHR, textStatus) => {
           console.log(jqXHR);
           
           alert("Los datos se actualizaron correctamente, recargue la pagina para visualizar los cambios");
-       
+          window.location.href = window.location;
         },
 
         error: (jqXHR, textStatus, errorThrow) => {
@@ -22,7 +20,9 @@
           alert(jqXHR.responseText);
          
 
-        }});
-      });	
+        },
+      });
+      return false;
     });
-		
+
+  });

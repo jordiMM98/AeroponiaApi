@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 
-	<title>Reportess</title>
+	<title>Reportes</title>
 	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -26,6 +26,7 @@
 	<script src="../js/logout.js"></script>
 	<script src="../js/user.js"></script>
 	<script src="../js/update_user.js"></script>
+	<script src="../js/autoclose.js"></script>
  
 	<style type="text/css">
 		#spin{
@@ -66,7 +67,7 @@
 								<li>
 									<a href="../HTML/registrar_fechas.html">Registro de fechas </a></li>
 									<li >
-										<a href="../HTML/aspersion.html">Aspersion </a></li>
+										<a href="../HTML/aspersion.html">Aspersión </a></li>
 										<li >
 											<a href="../HTML/monitoreo_dia.html">Monitoreo por día </a></li>
 											<li >
@@ -83,15 +84,9 @@
 															
 															<li><a href="../HTML/historial.html"> <em class="fas fa-history"></em> Historial de Actividad </a></li>
 										
-
-
-
 															<li ><a id='logoutButton'onclick="javascript:$.fn.CookieCompliance.disconsent();"> <em class="fas fa-sign-out-alt"></em> Cerrar Sesión</a></li>
 														</ul>
 													</li>
-													
-													
-													
 												</ul>
 											</div>
 											<!--/.nav-collapse -->
@@ -164,7 +159,7 @@
 																	<label> <h4>Actualizar foto de perfil</h4></label>
 																	<img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen">
 
-																	<input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required>
+																	<input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" src="../imagen/add.png" required>
 
 																	<br/>
 
@@ -240,9 +235,9 @@
 
 										
 										<div class="portfolio-items isotopeWrapper clearfix" id="3">
-											<article class="col-sm-6 isotopeItem photography" >
+											<article class="col-sm-4 isotopeItem photography" >
 												<div class="portfolio-item" >
-													<img src="../imagen/graficos1.jpg" style="margin-left:60px;"alt="Imagen graficas"  width="100" height="300" />
+													<img src="../imagen/graficos1.jpg" style="margin-left:60px;"alt="Imagen graficas"  width="100" height="195" />
 													<div class="portfolio-desc align-center">
 														<div class="folio-info">
 															<a href="../HTML/graficas.html" class="fancybox">
@@ -253,9 +248,21 @@
 													</div>
 												</article>
 
-												<article class="col-sm-6 isotopeItem photography">
+												<article class="col-sm-4 isotopeItem photography">
 													<div class="portfolio-item">
-		<img src="../imagen/reporte.jpg" alt="imagen Reportes" style="width: 70%;margin-left:40px;" />
+														<img src="../assets/images/slides/cultivos3.jpg" alt="imagen Reportes" width="100" height="195" style="width: 70%;margin-left:60px;" />
+														<div class="portfolio-desc align-center">
+															<div class="folio-info">
+																<a href="../HTML/detail.html" class="fancybox">
+																	<h5 style="color: black;">Detalles del cultivo</h5>
+																	<em class="fa fa-link fa-2x"></em></a>
+																</div>
+															</div>
+														</div>
+													</article>
+													<article class="col-sm-4 isotopeItem photography">
+													<div class="portfolio-item">
+														<img src="../imagen/reporte.jpg" alt="imagen Reportes" style="width: 70%;margin-left:40px;" />
 														<div class="portfolio-desc align-center">
 															<div class="folio-info">
 																<a href="../HTML/tablas.html" class="fancybox">
@@ -385,6 +392,10 @@
 												<script src="//norfipc.com/js/jquery.cookie.js"></script>
 												<script src="//norfipc.com/js/cookiecompliance.js"></script>
 												<script type="text/javascript" src="../js/subir.js"></script>
+
+												<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 											</body>
 
 											

@@ -30,6 +30,8 @@
 <script src="../js/lista_cultivo.js"></script>
 <script src="../js/user.js"></script>
 <script src="../js/update_user.js"></script>
+<script src="../js/fechasiembra.js"></script>
+<script src="../js/autoclose.js"></script>
     <style type="text/css">
     #spin{
       animation: spin 1s linear infinite;
@@ -72,12 +74,12 @@
                      <li>
                         <a href="../HTML/registrar_fechas.html">Registro de fechas </a></li>
                         <li >
-                           <a href="../HTML/aspersion.html">Aspersion </a></li>
+                           <a href="../HTML/aspersion.html">Aspersión </a></li>
                            <li >
                               <a href="../HTML/monitoreo_dia.html">Monitoreo por día </a></li>
                               <li >
                                  <a href="../HTML/monitoreo_mes.html">Monitoreo por mes</a></li>
-                                 <li><a href="../HTML/Reportes.html">Reportes</a></li>
+                                 <li class="active"><a href="../HTML/Reportes.html">Reportes</a></li>
 
 
 
@@ -167,9 +169,9 @@
                      </div>
                  </div>
                  <label> <h4>Actualizar foto de perfil</h4></label>
-                 <img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen">
+                 <img class="img-thumbnail rounded mx-auto d-block " width="100px" src="../imagen/add.png" alt="Agregar imagen" id="foto">
 
-                 <input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" src="../imagen/add.png" required="">
+                 <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" src="../imagen/add.png" required="">
 
                  <br/>
 
@@ -250,22 +252,27 @@
 <form id="formualario">
   
 
-<div class="col-md-6 mb-6">
+<div class="col-md-3 mb-1">
  <label for="crop"><h3>Nombre del cultivo</h3></label>
+
  <br>
  <select class="seleccion" style="width:200px;" name="crop_id" id="crop_id" required> </select>
 
 </div>
 
 
-<div class="col-md-2  mb-1">
+<div class="col-md-3 mb-1">
     <label for="date"><h3>Fecha de siembra</h3></label>
-    <input type="date" class="form-control" id="date" required >
+    <input type="date" class="seedtime form-control" id="datee" required >
 </div>
 
-<div class="col-md-2  mb-1">
+<div class="col-md-3 mb-1">
     <label for="date"><h3>Fecha de monitoreo</h3></label>
-    <input type="date" class="form-control" required>
+    <input type="date" class="form-control" id="date"required>
+</div>
+<div class="col-md-3 mb-1">
+     <input type="submit" style="margin-top: 72px;width: 138px;
+      height: 40px;padding: 0 10px; " class="btn btn-success btn-sm" id="Enviar" value="Mostrar información" >
 </div>
 
 
@@ -275,12 +282,12 @@
     <div   class="container-fluid">
         <div class="row">
             <div   class="col-md-5">
-    <input type="submit" class="btn btn-success" id="Enviar" value="Mostrar información" > 
+   
                 <div  class="card ">
                     <div class="card-header ">
 
                         <h4  id="nc" class="card-title"> Valor del dia</h4>
-                        
+                  
                     </div>
                     <div  class="card-body ">
                        <!-- cal para crear la grafica-->
@@ -504,15 +511,16 @@
 
 
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
-										<script src="//norfipc.com/js/jquery.cookie.js"></script>
-										<script src="//norfipc.com/js/cookiecompliance.js"></script>
+<script src="//norfipc.com/js/jquery.cookie.js"></script>
+<script src="//norfipc.com/js/cookiecompliance.js"></script>
 
 <script src="../js/chartist.min.js"></script>
 <script src="../js/demo.js"></script>
- 
+<script type="text/javascript" src="../js/subir.js"></script>
 
-  <script type="text/javascript" src="../js/subir.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
 
 </body>
@@ -525,80 +533,6 @@
 
     });
 </script>
-
-
-
-
-<script type="text/javascript">
-  /*
- $("#crop_id").change(function(){
-  var id = $("#crop_id").val();
-  console.log(id);
-});
-
- console.log("Intentando  atraer datos fechas lista date");
- $.ajax({
-     headers:{"Authorization": "Token "+document.cookie},
-     url: 'https://api-aero.herokuapp.com/crops/list-date/'+crop_id+'/',  
-     success: function(data) {
-        console.log(data);
-
-        var row = $("#id");
-
-        
-        $.each(data, function(index, valor){
-           row.append('<option value="'+id+'">'+ valor.seedtime+'</option>');
-           console.log(data);
-
-
-       });
-    },
-    
-});
-*/
- 
-</script>
-
-
-<!--dtos del reporte-->
-<script type="text/javascript">
-
-/*
-
- $("#date").change(function(){
-  var date = $("#date").val();
-  console.log(date);
-});
-
- console.log("Intentando  atraer datos");
- $.ajax({
-     headers:{"Authorization": "Token "+document.cookie},
-     url: 'https://api-aero.herokuapp.com/monitoring/process/crop/'+date+'/' , 
-     DataType:"json",
-     success: function(data) {
-         $.each(data, function(index, valor){
-            console.log();
-
-            var row = "<tbody>"+
-            "  <td >"+valor+  "</td>"+
-            
-            "</tbody>";
-            
-            $("#tbody>td").append(row);
-
-
-        });
-         
-
-     }
-     
- });
- */
- 
-</script>
-
-
-
 
 
 <!--backups-->
@@ -670,8 +604,8 @@
 <script type="text/javascript">
 
 $("#formualario").on('submit', function(e) {
-            e.preventDefault();
-    var d = document.getElementById("date").value;  
+    e.preventDefault();
+    var d = document.getElementById("datee").value;  
       
                       $.ajax({
                         cache:false,
@@ -746,7 +680,8 @@ $("#formualario").on('submit', function(e) {
 
                           
                             var row =   '<div>'+
-                            '<h4>'+'Nombre del cultivo: '+data.process.crop+'</h4>'+
+
+                              '<h4>'+'Nombre del cultivo: '+data.process.crop+'</h4>'+
                              '<p>'+'Monitoreo del dia: '+'</p>'+
 
 

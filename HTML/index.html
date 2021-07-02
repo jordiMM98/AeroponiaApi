@@ -172,14 +172,10 @@
                                   <em class="fas fa-envelope"></em>Email:información@uptlaxponiente.edu.mx
                                   <div class="team-socials">
                                   <a rel="noopener noreferrer" href="https://web.facebook.com/UniversidadUPTrep/?_rdc=1&_rdr" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
-													<a rel="noopener noreferrer" href="https://twitter.com/UPTrepOficial?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
-													<a rel="noopener noreferrer" href="https://www.instagram.com/universidaduptrep/?igshid=k9bbnvgoqmni" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
-													
-							 	  
-                        </div>
-
-
-
+								  <a rel="noopener noreferrer" href="https://twitter.com/UPTrepOficial?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+								  <a rel="noopener noreferrer" href="https://www.instagram.com/universidaduptrep/?igshid=k9bbnvgoqmni" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
+	 	  
+                        		</div>
 							</div>
 						</div><!-- end widget -->
 					</div>
@@ -194,29 +190,18 @@
 							<p>TecNM campus San Martín</p>
 							<div class="contact-info">
 								<em class="fa fa-map-marker"></em> Dirección: Camino a la Barranca de Pesos s/n, San Lucas Atoyatenco, 74120 San Martín Texmelucan de Labastida, Pue., México<br>
-              <em class="fa fa-phone"></em> Teléfono: +52 248 111 1132<br>
-              <em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
+              					<em class="fa fa-phone"></em> Teléfono: +52 248 111 1132<br>
+              					<em class="fas fa-envelope"></em> Email: depto.difusion@itssmt.edu.mx
               
-              <div class="team-socials">
-                <a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
-													<a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
-													<a rel="noopener noreferrer" href="https://www.instagram.com/tecnm_sanmartin/?igshid=18ll10a9raqods" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
-
-							 	  
-
+              					<div class="team-socials">
+               					 <a rel="noopener noreferrer" href="https://web.facebook.com/TecNMSanMartinTexmelucan" target="_blank"><em style="color:#3B5998;" class="fab fa-facebook-square"></em></a>
+								 <a rel="noopener noreferrer" href="https://twitter.com/TecNMSanMartinT?s=08" target="_blank"><em style="color: #00ACEE;" class="fab fa-twitter-square"></em></a>
+							     <a rel="noopener noreferrer" href="https://www.instagram.com/tecnm_sanmartin/?igshid=18ll10a9raqods" target="_blank"><em style="color:#C13584" class="fab fa-instagram-square"></em></a>
                         </div>
-								
-
-								
-
 
 							</div>
 						</div><!-- end widget -->
 					</div>
-
-
-
-
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -294,14 +279,12 @@ document.getElementById("eye").addEventListener("click", function () {
 <script>
 	$(document).ready(function(){
 		$("#login_form").bind("submit",function(){
-
 			$.ajax({
 				type:"post",//los datos los somete a procesar un recurso especifico
 				url: "http://sistemas.smartin.tecnm.mx:443/users/login/",
 				cache:false,
 				data: $(this).serialize(), //sereliza el formulario 
 				success: function(response, responseText){//contiene el contenido resultante  si la llamada se realiza satisfactoriente
-				
 					var token = response.token;//creamos una variable para obtener el token
 					document.cookie =  token;//creamos una cookie y le agregamos el token que obtuvimos en la variable 
 					alert("Se inicio sesión correctamente");
@@ -318,10 +301,6 @@ document.getElementById("eye").addEventListener("click", function () {
 
 	});
 </script>
-
-
-
-
 
 
 

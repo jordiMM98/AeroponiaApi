@@ -11,6 +11,7 @@ $(document).ready(function(){
 			url: 'http://sistemas.smartin.tecnm.mx:443/crops/list-date/'+id+'/' ,
 			DataType:"json",
 			success: function(data) {
+				console.log(data);
 			console.log(data[0]);
 			var fechasiembra = data[0];
 			
@@ -30,14 +31,15 @@ $(document).ready(function(){
 
 
 			
-			document.getElementById("s").setAttribute("min", fechasiembra.seedtime);
+			//document.getElementById("s").setAttribute("min", fechasiembra.seedtime);
 			document.getElementById("date").setAttribute("min", fechasiembra.seedtime);
-			document.getElementById("datee").setAttribute("min", fechasiembra.seedtime);
+			//document.getElementById("datee").setAttribute("min", fechasiembra.seedtime);
 
 
 			},error: function(response, textstatus, errorThrow){
 				
 				console.log(response.responseText);
+				
 			
 				
 			}

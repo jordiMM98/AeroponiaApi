@@ -24,7 +24,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 	
 	<!--font awesome con CDN-->  
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">   
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"> <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
 	<script src="../js/modal.js"></script>
 	
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -90,6 +91,14 @@
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más<strong class="caret"></strong></a>
 													<ul class="dropdown-menu">
 														<li id="f"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><em class="fas fa-user"> </em> Perfil de usuario</a></li>
+														<li id="f"><a href="../HTML/aspersionUpdate.html" style="width:auto;"><em class="iconify" data-icon="mdi:sprinkler-variant" data-inline="false"> </em> 
+										Actualizar ciclo de aspersión</a></li>
+										<li id="f"><a href="../HTML/cultivoUpdate.html" style="width:auto;"><em  class="iconify" data-icon="carbon:crop-health" data-inline="false"> </em> 
+										Actualizar información del cultivo</a></li>
+
+									</span>
+											<li id="f"><a href="../HTML/detail-corps.html" style="width:auto;"><em  class="iconify" data-icon="whh:flowerpot" data-inline="false"> </em> 
+										Información de los cultivo</a></li>
 														<li><a href="../HTML/historial.html"> <em class="fas fa-history"></em> Historial de Actividad </a></li>
 										
 														<li ><a id='logoutButton'onclick="javascript:$.fn.CookieCompliance.disconsent();"> <em class="fas fa-sign-out-alt"></em> Cerrar Sesión</a></li>
@@ -133,7 +142,7 @@
 																	<div class="col-md-6 pr-1">
 																		<div class="form-group" >
 																			<label>Nombre:(s)</label>
-																			<input type="text" id="name" name="name" pattern="[a-zA-Z ]{2,254}"  class="form-control" required>
+																			<input type="text" id="name" name="name" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"  class="form-control" required>
 
 																		</div>
 																	</div>
@@ -155,14 +164,14 @@
 																	<div class="col-md-6 pr-1">
 																		<div class="form-group">
 																			<label>Apellido Paterno:</label>
-																			<input type="text" id="paternal_surname" name="paternal_surname" class="form-control" >
+																			<input type="text" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" id="paternal_surname" name="paternal_surname" class="form-control" >
 																		</div>
 																	</div>
 
 																	<div class="col-md-6 pl-1">
 																		<div class="form-group">
 																			<label>Apellido Materno:</label>
-																			<input type="text" id="maternal_surname" name="maternal_surname" class="form-control"   >
+																			<input type="text" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" id="maternal_surname" name="maternal_surname" class="form-control"   >
 																		</div>
 																	</div>
 																</div>
@@ -252,7 +261,7 @@
 												<div class="col-md-3 mb-1">
 													<label for="crop"><h3>Nombre del cultivo</h3></label>
 													<br>
-													<select class="seleccion" style="width:200px;" name="crop_id" id="crop_id" required>
+													<select class="seleccion"   name="crop_id" id="crop_id" required>
 
 													</select>
 
@@ -283,7 +292,7 @@
 												<div class="col-md-2">
 													<div class="featured-box">
 														<div class="text">
-															<h3>ph</h3>
+															<h3>pH</h3>
 														</div>
 													</div>
 												</div>
@@ -756,7 +765,7 @@
 		});
 	</script>
 
-	
+<script type="text/javascript" src="../js/validate_aspersion.js"></script>	
 
 	
 </html>

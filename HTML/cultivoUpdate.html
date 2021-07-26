@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	<title>Registro de cultivo</title>
+	<title>Actualizar información de los cultivos</title>
 	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -38,12 +38,11 @@
 	<script src="../js/user.js"></script>
 	<script src="../js/update_user.js"></script>
 	<script src="../js/autoclose.js"></script>
-	<script src="../js/lista_cultivo_update_corp.js"></script>
+	
 	<script src="../js/lista_cultivo.js"></script>
-	<script src="../js/actualizarcultivo.js"></script>
-	<script src="../js/ciclo_aspersion.js"></script>
-	<script src="../js/modal_cultio.js"></script>
-
+	
+	
+	
 	<style type="text/css">
 		#spin{
 			animation: spin 1s linear infinite;
@@ -96,7 +95,6 @@
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li id="f"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><em class="fas fa-user"> </em> Perfil de usuario</a></li>
-
 										<li id="f"><a href="../HTML/aspersionUpdate.html" style="width:auto;"><em class="iconify" data-icon="mdi:sprinkler-variant" data-inline="false"> </em> 
 										Actualizar ciclo de aspersión</a></li>
 										<li id="f"><a href="../HTML/cultivoUpdate.html" style="width:auto;"><em  class="iconify" data-icon="carbon:crop-health" data-inline="false"> </em> 
@@ -128,7 +126,7 @@
 
 				<header id="head" class="secondary">
 					<div class="container" style="margin-bottom: 20px;">
-						<h1>Registro de cultivos</h1>
+						<h1>Actualizar información de los cultivos</h1>
 						
 					</div>
 				</header>
@@ -166,7 +164,7 @@
 													<div class="col-md-6 pr-1">
 														<div class="form-group" id="name">
 															<label>Matrícula ó Número de Trabajador</label>
-															<input type="text"  class="form-control" id="key" name="key" required>
+															<input type="text" class="form-control" id="key" name="key" required>
 
 														</div>
 													</div>  
@@ -178,14 +176,14 @@
 													<div class="col-md-6 pr-1">
 														<div class="form-group">
 															<label>Apellido Paterno:</label>
-															<input type="text" id="paternal_surname" name="paternal_surname" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" class="form-control" required>
+															<input type="text" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" id="paternal_surname" name="paternal_surname" class="form-control" required>
 														</div>
 													</div>
 
 													<div class="col-md-6 pl-1">
 														<div class="form-group">
 															<label>Apellido Materno:</label>
-															<input type="text" id="maternal_surname" name="maternal_surname" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"class="form-control" required>
+															<input type="text" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" id="maternal_surname" name="maternal_surname" class="form-control" required>
 														</div>
 													</div>
 												</div>
@@ -253,94 +251,7 @@
 						
 					</div>
 
-<!--Modal del ciclo update-->
-					<div id="ciclo" class="modal">
-					<form class="modal-content animate " id="modalc" enctype="multipart/form-data">
-						<div class="imgcontainer">
-							<span onclick="document.getElementById('ciclo').style.display='none'" class="close" title="Close Modal">&times;</span>
 
-						</div>
-
-						<div class="content" id="ciclo" class="modal">
-							<div class="container-fluid">
-								<div >
-									<div class="col-md-12">
-										<div class="card">
-											<div class="card-header">
-												<h3 class="card-title">Actualizar ciclo de aspersion</h3>
-											</div>
-											<br>
-											<div class="card-body">
-														<div class="col-md-4 mb-5">
-										<div class="featured-box">
-											<div class="text" style="margin-bottom: 0px;">
-												<h3><label for="name_crop">
-													<h3 style="color:#484848;">Seleccione el cultivo</h3></label>
-													<br>
-													<select class="caja id" style="width:200px;" name="crop_id" id="crop_id">
-
-													</select></h3>
-													
-
-												</div>
-											</div>
-										</div>
-												
-												<div class="row">
-													<div class="col-md-6 pr-1">
-														<div class="form-group" >
-															<div><span id="mensaje"></span></div>
-															<label for="cycle_duration" style="margin-top: 10px;">
-																Duración del ciclo de aspersión :  </label>
-																<input type="text" style="margin-top:15px;" class="form-control" id="cycle_duration" name="cycle_duration"  step="any" placeholder="Ejemplo 00:10:20" pattern="(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]" required>
-																<span id="passstrength"></span>
-														</div>
-													</div>
-
-
-
-													<div class="col-md-6 pr-1">
-														<div class="form-group" >
-															<label for="standby_time">
-																Tiempo de espera:</label>
-																<input type="text" style="margin-top:15px;" class="form-control" id="standby_time" name="standby_time" pattern="(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]" step="any" placeholder="Ejemplo. 00:20:10" required>
-																<span id="t"></span>
-
-														</div>
-													</div>  
-												</div>
-
-
-
-												
-
-												
-
-												<button type="submit" id="a" class="btn btn-success"><em class=" fas fa-edit" ></em>Actualizar Datos</button>
-												
-												<button type="reset" id="r" class="btn btn-danger" value="Restaurar formualario">
-													<em class="fas fa-trash"></em> Restaurar formulario</button>
-													
-												</div>
-											</div>
-										</div>
-										
-												
-
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-						
-					</div>
-
-
-
-
-						
 
 					<div class="go-top-container">
 						<div class="go-top-button">
@@ -358,10 +269,27 @@
 							<form id="formulario" enctype="multipart/form-data">
 
 								<div class="col-md-11">
+									
+										<div class="featured-box" style="margin-bottom: -28px;">
+											<div class="text" >
+												<h3><label for="name_crop"><h3 style="color:#484848;">Seleccione el cultivo</h3></label>
+													
+													<select class="caja" style="width:200px;" name="crop_id" id="id" required>
+														<option label="Seleccione un cultivo" selected disabled></option>
+														
+
+													</select></h3>
+													
+
+												</div>
+											</div>
+										</div>
+												
+								<div class="col-md-11">
 									<div class="featured-box">
 										<div class="text">
 											<h3>Nombre del cultivo:</h3>
-											<input style="width: 500px;" type="text" class="form-control" id="name_crop" name="name_crop" step="any"   title="Solo letras pueden ser utilizadas mayúsculas y minúsculas. " placeholder="Ingrese el nombe del cultivo" required></input>
+											<input style="max-width: 500px;" type="text" class="form-control" id="name_crop" name="name_crop" step="any"   title="Solo letras pueden ser utilizadas mayúsculas y minúsculas. " placeholder="Ingrese el nombe del cultivo" required></input>
 										</div>
 									</div>
 								</div>
@@ -497,9 +425,16 @@
 								</div>
 								
 
-								<input type="submit" class="btn btn-success" id="Enviar" value="Guardar" >
 
-								
+
+												
+
+												
+
+												<button type="submit" id="culti" class="btn btn-success"><em class=" fas fa-edit" ></em>Actualizar Cultivo</button>
+												
+												<button type="reset" id="r" class="btn btn-danger" value="Restaurar formualario">
+													<em class="fas fa-trash"></em> Restaurar formulario</button>
 								
 								
 								
@@ -648,109 +583,7 @@
 				</html>
 				
 				
-				<script>
-
 				
-					$("#formulario").on('submit', function(e) {
-						e.preventDefault();
-
-						var nombre_cultivo = document.getElementById("name_crop").value;
-						var mimnimo_ph = document.getElementById('minimum_ph').value;
-						var mph = (parseFloat(mimnimo_ph));
-						var optimum_ph = document.getElementById("optimum_ph").value;
-						var op_ph = (parseFloat(optimum_ph));
-						var maximum_ph = document.getElementById("maximum_ph").value;
-						var mx_ph = (parseFloat(maximum_ph));
-						var minimum_conductividad = document.getElementById("minimum_conductividad").value;
-						var mic = (parseFloat(minimum_conductividad));
-						var optimum_conductividad = document.getElementById("optimum_conductividad").value;
-						var oc = (parseFloat(optimum_conductividad));
-						var maximum_conductividad = document.getElementById("maximum_conductividad").value;
-						var mc = (parseFloat(maximum_conductividad));
-						var humidity = document.getElementById("humidity").value;
-						var hm =(parseInt(humidity));
-						var minimo_temperature = document.getElementById("minimo_temperature").value;
-						var mit = (parseInt(minimo_temperature));
-						var optimum_temperature = document.getElementById("optimum_temperature").value;
-						var ot = (parseInt(optimum_temperature));
-						var maximum_temperature= document.getElementById("maximum_temperature").value;
-						var mt = (parseInt(maximum_temperature));
-
-						
-						var nuevocultivo = {
-							name_crop: nombre_cultivo,
-
-							ph:{ 
-								minimum: mph, 
-								optimum:op_ph ,
-								maximum:mx_ph
-							},
-
-							electric_conductivity:{
-								minimum: mic,
-								optimum:oc,
-								maximum:mc
-							},
-							
-							temperature:{
-								minimum:mit,
-								optimum:ot,
-								maximum:mt
-							}	,
-							humidity: hm
-						};
-
-						var myjson = JSON.stringify(nuevocultivo);
-
-						$.ajax({
-							headers:{"Authorization": "Token "+document.cookie},
-           url: "http://sistemas.smartin.tecnm.mx:443/crops/create-crop/" ,// cadena que tine la url a caragr de la API(obligatoria)
-           method: "POST",///los datos los somete a procesar un recurso especifico
-           data: myjson, //sereliza el formulario  
-           dataType:"json",
-           contentType:"application/json; charset=utf-8",
-           cache:false,//establece que no guarde la cache en el servidor
-           processData: false,//Por defecto, cada objeto que no sea un string y sea pasado de otro documento, sera transformado en cadena. Para evitar que esto pase, este parametro se puede poner en false
-
-           success: (jqXHR, textStatus) => {//contiene el contenido resultante  si la llamada se realiza satisfactoriente
-           	
-           	alert(jqXHR.msg);
-           	$('#name_crop').val('');
-           	$('#minimum_ph').val('');
-           	$('#optimum_ph').val('');
-           	$('#maximum_ph').val('');
-           	$('#minimo_temperature').val('');
-           	$('#optimum_temperature').val('');
-           	$('#maximum_temperature').val('');
-           	$('#humidity').val('');
-           	$('#minimum_conductividad').val('');
-           	$('#optimum_conductividad').val('');
-           	$('#maximum_conductividad').val('');
-           	
-           },
-           
-           error: (jqXHR, textStatus, errorThrow) => { //llamamos una funcion de callback  despues de procesar la funcion
-           	console.log(jqXHR.responseText);
-           	alert(jqXHR.responseText);
-           	
-           	$('#name_crop').val('');
-           	$('#minimum_ph').val('');
-           	$('#optimum_ph').val('');
-           	$('#maximum_ph').val('');
-           	$('#minimo_temperature').val('');
-           	$('#optimum_temperature').val('');
-           	$('#maximum_temperature').val('');
-           	$('#humidity').val('');
-           	$('#minimum_conductividad').val('');
-           	$('#optimum_conductividad').val('');
-           	$('#maximum_conductividad').val('');
-
-           }
-       });
-						return false;
-					});
-					
-				</script>
 
 
 
@@ -812,7 +645,6 @@
 				</script>
 				
 
-<script type="text/javascript" src="../js/validate_aspersion.js"></script>
 <script type="text/javascript">
 	/*
 	$(document).ready(function(){
@@ -958,11 +790,11 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#id").on('change',function() {
+		$("#id").on("change",function() {
 
 				
-			var id_crop = $('#id').val();
-			
+			//var id_crop = $('#id').val();
+			var id_crop = document.getElementById("id").value;
 
 			console.log(id_crop);
 		$.ajax({
@@ -992,10 +824,11 @@
 
                 $("#culti").click( function(e) {
 
-            e.preventDefault();
-        var idcrop =data.id;
 
-        console.log(id);
+            e.preventDefault();
+        
+
+        console.log("aca se cambia a  "+ id_crop);
 
 						var nombre_cultivo = document.getElementById("name_crop").value;
 						var mimnimo_ph = document.getElementById('minimum_ph').value;
@@ -1044,10 +877,11 @@
 						};
 
 						var myjson = JSON.stringify(nuevocultivo);
-					console.log(idcrop);
+					
+					console.log("aca se cambia a 1 "+ id_crop);
 						$.ajax({
 							headers:{"Authorization": "Token "+document.cookie},
-           url: 'http://sistemas.smartin.tecnm.mx:443/crops/update-crop/'+idcrop+'/' ,// cadena que tine la url a caragr de la API(obligatoria)
+           url: 'http://sistemas.smartin.tecnm.mx:443/crops/update-crop/'+id_crop+'/' ,// cadena que tine la url a caragr de la API(obligatoria)
            method: "PUT",///los datos los somete a procesar un recurso especifico
            data: myjson, //sereliza el formulario  
            dataType:"json",
@@ -1057,7 +891,7 @@
 
            success: (jqXHR, textStatus) => {//contiene el contenido resultante  si la llamada se realiza satisfactoriente
            	
-           	alert("Cultivo actualizado correctamente");
+          
            	console.log(jqXHR);
            	$('#name_crop').val(jqXHR.name_crop).css("color","green").css("fontWeight","bold").css("fontSize","18px");
            	$('#minimum_ph').val(jqXHR.ph.minimum).css("color","#5CB85C").css("fontWeight","bold").css("fontSize","18px");
@@ -1070,6 +904,8 @@
            	$('#minimum_conductividad').val(jqXHR.electric_conductivity.minimum).css("color","#5CB85C").css("fontWeight","bold").css("fontSize","18px");
            	$('#optimum_conductividad').val(jqXHR.electric_conductivity.optimum).css("color","#5CB85C").css("fontWeight","bold").css("fontSize","18px");
            	$('#maximum_conductividad').val(jqXHR.electric_conductivity.maximum).css("color","#5CB85C").css("fontWeight","bold").css("fontSize","18px");
+           	 	alert("Cultivo actualizado correctamente");
+           	window.location.href = window.location;
            	
            },
            

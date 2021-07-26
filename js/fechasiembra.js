@@ -36,7 +36,8 @@ $(document).ready(function(){
 			//document.getElementById("datee").setAttribute("min", fechasiembra.seedtime);
 
 
-			},error: function(response, textstatus, errorThrow){
+			},
+			error: function(response, textstatus, errorThrow){
 				
 				console.log(response.responseText);
 				

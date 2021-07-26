@@ -226,7 +226,7 @@ demo = {
                     
 
         Chartist.Pie('#chartPreferences', {
-            labels: ['ph','Humedad','Temperatura','Conductividad'],
+            labels: ['pH','Humedad','Temperatura','Conductividad'],
             series: [d,x,z,m]
 
         });var dataPreference = {series:[phn, humedadn, temperaturen, conducn]  
@@ -245,7 +245,7 @@ demo = {
                     
 
         Chartist.Pie('#noche', {
-            labels: ['ph','Humedad','Temperatura','Conductividad'],
+            labels: ['pH','Humedad','Temperatura','Conductividad'],
             series: [dn,xn,zn,mn]
 
         });

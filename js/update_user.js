@@ -11,17 +11,21 @@
          contentType: false,
          cache: false,
          processData: false,
-         success: (jqXHR, textStatus) => {
-          console.log(jqXHR);
-          alert("Se actualizaron los datos correctamente");
-          window.location.href = window.location;
+         success: (response,jqXHR, textStatus) => {
+           console.log(response);
+          alert(response.msg);
+         
+         
+         // $('#name_crop').val(data.name_crop).css("fontWeight","bold").css("fontSize","18px");
 
+         window.location.href = window.location;
         },
 
-        error: (jqXHR, textStatus, errorThrow) => {
-          console.log(jqXHR.responseText);
+        error: (response,jqXHR, textStatus, errorThrow) => {
+          console.log(jqXHR);
+          console.log(response);
           
-          alert(jqXHR.responseText);
+          alert("Hubo un error intentelo mas tarde ");
 
         }});
       });  

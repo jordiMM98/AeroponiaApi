@@ -89,7 +89,7 @@
 						<li>
 							<a href="../index.html">Inició </a></li>
 							<li class="active"	>
-								<a href="../HTML/registrarusuario.html">Registrar Usuarios</a></li>
+								<a href="../HTML/registrarusuario.html"><em class="fa fa-user-plus" aria-hidden="true"></em>Registrar Usuarios</a></li>
 								<li>
 									<a href="../HTML/index.html"><em class="fas fa-sign-in-alt"></em> Iniciar sesión</a></li>
 
@@ -180,14 +180,14 @@
 													<div class="register-switch">
 														<label for="name">
 															<h3>Nombre(s)</h3></label>
-															<input type="text" class="form-control" id="name" name="name" title="Solo letras mayusculas y minusculas" pattern="[a-zA-Z]+"  placeholder="Tu nombre" required>
+															<input type="text" class="form-control" id="name" name="name" title="Solo letras mayusculas y minusculas" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"  placeholder="Tu nombre" required>
 
 															<label for="paternal_surname">
 																<h3>Apellido Paterno:</h3></label>
-																<input type="text" class="form-control" id="paternal_surname" title="Solo letras mayusculas y minusculas" pattern="[a-zA-Z]+" name="paternal_surname" placeholder="Primer Apellido" required>
+																<input type="text" class="form-control" id="paternal_surname" title="Solo letras mayusculas y minusculas" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" name="paternal_surname" placeholder="Primer Apellido" required>
 
 																<label for="maternal_surname"><h3>Apellido Materno: </h3></label>
-																<input type="text" class="form-control" id="maternal_surname" title="Solo letras mayusculas y minusculas" pattern="[a-zA-Z]+" name="maternal_surname" placeholder="Segundo Apellido" required>
+																<input type="text" class="form-control" id="maternal_surname" title="Solo letras mayusculas y minusculas" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" name="maternal_surname" placeholder="Segundo Apellido" required>
 
 																<label for="is_admin"><h3>Rol: </h3></label> <br/>
 
@@ -628,10 +628,16 @@ $('#username').keyup(function(e) {
 				$('#is_admin').val('');
 			},
 
-			error: (response,jqXHR, textStatus, errorThrow) => { //llamamos una funcion de callback  despues de procesar la funcion
+			error: (responseText,responseJSON,response,jqXHR, textStatus, errorThrow) => { //llamamos una funcion de callback  despues de procesar la funcion
+				console.log(response);
+				console.log(jqXHR);
+				console.log(responseJSON);
 
-				alert("Hubo un error no pudo crearse el usuario");
+
 				
+				alert(responseText.responseText);
+			
+				console.log(responseText);
 			}
 			
 		});

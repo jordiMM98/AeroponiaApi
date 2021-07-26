@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	
-	<title>Aspersión</title>
+	<title>Actualizar ciclo de aspersión</title>
 	<link rel="shortcut icon" href="../imagen/listo.png" type="image/png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
 <script src="../js/logout.js"></script>
 <script src="../js/user.js"></script>
 <script src="../js/autoclose.js"></script>
-
+<script src="../js/ciclo_aspersion.js"></script>
 
 
 		<style type="text/css">
@@ -85,13 +85,13 @@
 													<ul class="dropdown-menu">
 														<li id="f"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><em class="fas fa-user"> </em> Perfil de usuario</a></li>
 														<li id="f"><a href="../HTML/aspersionUpdate.html" style="width:auto;"><em class="iconify" data-icon="mdi:sprinkler-variant" data-inline="false"> </em> 
-														Actualizar ciclo de aspersión</a></li>
-														<li id="f"><a href="../HTML/cultivoUpdate.html" style="width:auto;"><em  class="iconify" data-icon="carbon:crop-health" data-inline="false"> </em> 
-														Actualizar información del cultivo</a></li>
+										Actualizar ciclo de aspersión</a></li>
+										<li id="f"><a href="../HTML/cultivoUpdate.html" style="width:auto;"><em  class="iconify" data-icon="carbon:crop-health" data-inline="false"> </em> 
+										Actualizar información del cultivo</a></li>
 
-													</span>
-															<li id="f"><a href="../HTML/detail-corps.html" style="width:auto;"><em  class="iconify" data-icon="whh:flowerpot" data-inline="false"> </em> 
-														Información de los cultivo</a></li>
+									</span>
+											<li id="f"><a href="../HTML/detail-corps.html" style="width:auto;"><em  class="iconify" data-icon="whh:flowerpot" data-inline="false"> </em> 
+										Información de los cultivo</a></li>
 														<li><a href="../HTML/historial.html"> <em class="fas fa-history"></em> Historial de Actividad </a></li>
 										
 														<li ><a id='logoutButton'onclick="javascript:$.fn.CookieCompliance.disconsent();"> <em class="fas fa-sign-out-alt"></em> Cerrar Sesión</a></li>
@@ -106,7 +106,7 @@
 
 								<header id="head" class="secondary">
 									<div class="container">
-										<h1>Aspersión</h1>
+										<h1>Actualizar ciclo de aspersión</h1>
 										<p></p>
 									</div>
 								</header>
@@ -254,7 +254,7 @@
 											<!--renglon1-->
 
 
-											<form id="formulario" enctype="multipart/form-data">
+											<form id="modalc" enctype="multipart/form-data">
 
 												<div class="col-md-4 mb-5">
 										<div class="featured-box">
@@ -262,58 +262,66 @@
 												<h3><label for="name_crop">
 													<h3 style="color:#484848;">Seleccione el cultivo</h3></label>
 													<br>
-													<select class="caja" style="width:200px;" name="crop_id" id="crop_id">
+													<select class="caja id" style="width:200px;" name="crop_id" id="crop_id">
 
 													</select></h3>
+
+												<button type="submit" id="a" class="btn btn-success"><em class=" fas fa-edit" ></em>Actualizar Datos</button>
+												
+												
 													
 
 												</div>
 											</div>
 										</div>
-
-
-<div style="margin-top: 15px;"><span id="mesage" ></span></div>
-													<div class="col-md-3" >
-														<div class="featured-box">
-
-															<div class="text">
-																
-																<label  >
+												
+												<div class="row">
+													<div class="col-md-6 pr-1">
+														<div class="form-group" >
+															<div style="margin-top: 15px;"><span id="mensaje" ></span></div>
+															<label for="cycle_duration" style="margin-top: 10px;">
 																Duración del ciclo de aspersión :  </label>
 																<input type="text" style="margin-top:15px;" class="form-control" id="cycle_duration" name="cycle_duration"  step="any" placeholder="Ejemplo 00:10:20" pattern="(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]" required>
 																<span id="passstrength"></span>
-																<br />
-																
-															</div>
 														</div>
 													</div>
-													
-													
 
 
 
-
-													<div class="col-md-3">
-														<div class="featured-box">
-															<div class="text">
-
-																<label >
+													<div class="col-md-6 pr-1">
+														<div class="form-group" >
+															<label for="standby_time">
 																Tiempo de espera:</label>
 																<input type="text" style="margin-top:15px;" class="form-control" id="standby_time" name="standby_time" pattern="(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]" step="any" placeholder="Ejemplo. 00:20:10" required>
 																<span id="t"></span>
 
-															</div>
 														</div>
-														<input style="margin-bottom: 20px;" type="submit" class="btn btn-success" id="Enviar" title="De click en el boton para guardar su ciclo de aspersión" value="Guardar">
-													</div>
+													</div>  
+												</div>
 
-												</form>
+
 
 												
-											</section>
-											
+
+												
+
+														
+												</div>
+											</div>
 										</div>
 										
+												
+
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						
+					</div>
+
 
 
 										<!-- /contenedor -->
@@ -403,7 +411,7 @@
 														<div class="col-md-6 panel">
 															<div class="panel-body">
 																<p class="text-right">
-																	Copyright &copy; 2020.
+																	Copyright &copy; 2014.
 
 																</p>
 															</div>
@@ -434,87 +442,7 @@
 
 
 
-									<script>
-										$("#formulario").on('submit', function(e) {
-											e.preventDefault();
-											$.ajax({
-												headers:{"Authorization": "Token "+document.cookie},
-												url: "http://sistemas.smartin.tecnm.mx:443/crops/add-sprinkling/",
-												method: "POST",
-												data: new FormData(this),
-												contentType: false,
-												cache: false,
-												processData: false,
-												success: (jqXHR, textStatus) => {
-													
-													alert(jqXHR.msg);	
-													$('#cycle_duration').val('');
-													$('#standby_time').val('');
-												},
-
-												error: (response, textStatus, errorThrow) => {
-													alert(response.responseText);
-													$('#cycle_duration').val('');
-													$('#standby_time').val('');
-
-
-												}
-											});
-										});
-</script>
-
-
-
-<script type="text/javascript">
-	$('#cycle_duration').keyup(function(e) {
-		
-		var strongRegex = new RegExp("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]");
-		var mediumRegex = new RegExp("^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]?$");
-		var enoughRegex = new RegExp("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]");
-		//si se cumple la condicion correspondiente muetra lo siguiente segun sea el caso  
-		if (false == enoughRegex.test($(this).val())) {
-			$('#passstrength').html('el formato no es correcto').css("color","red");
-		} else if (strongRegex.test($(this).val())) {
-			$('#passstrength').className = 'ok';
-			$('#passstrength').html('el fomato es correcto').css("color","green");
-		} else if (mediumRegex.test($(this).val())) {
-			$('#passstrength').className = 'alert';
-			$('#passstrength').html('el formato es el correcto!').css("color","green");
-		} else {
-			$('#passstrength').className = 'error';
-			$('#passstrength').html('el formato no es correcto').css("color","red");
-			//$('#passstrength').addClass('negacion');
-		}
-		return true;
-	});
-
-</script>
-
-
-<script type="text/javascript">
-	$('#standby_time').keyup(function(e) {
-		
-		var strongRegex = new RegExp("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]");
-		var mediumRegex = new RegExp("^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]?$");
-		var enoughRegex = new RegExp("(([0-1]?[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]");
-		//si se cumple la condicion correspondiente muetra lo siguiente segun sea el caso  
-		if (false == enoughRegex.test($(this).val())) {
-			$('#t').html('El formato no es correcto').css("color","red");
-		} else if (strongRegex.test($(this).val())) {
-			$('#t').className = 'ok';
-			$('#t').html('El fomato es correcto').css("color","green");
-		} else if (mediumRegex.test($(this).val())) {
-			$('#t').className = 'alert';
-			$('#t').html('El formato es el correcto!').css("color","green");
-		} else {
-			$('#t').className = 'error';
-			$('#t').html('El formato no es correcto').css("color","red");
-			//$('#passstrength').addClass('negacion');
-		}
-		return true;
-	});
-	
-</script>
+				
 
 
 <!--backups-->
@@ -572,99 +500,7 @@
 </script>
 <script type="text/javascript" src="../js/validate_aspersion.js"></script>
 
-<script type="text/javascript">
-	////lista de usuarios
-	//$('#id01').click(function() {
-		
-		$(document).ready(function(){
-			$(".caja").click(function() {
-				
-			var id = document.getElementById("crop_id").value;
-			
 
-			console.log(id);
-			$.ajax({
-		headers:{"Authorization": "Token "+document.cookie},
-		cache:false,
-		url: 'http://sistemas.smartin.tecnm.mx:443/crops/detail/sprinkling/'+id+'/' ,
-		success: function(data) {
-			console.log(data);
-			if (data){
-				var caja = document.getElementById("mesage");
-				caja.innerHTML = "El cultivo seleccionado ya cuenta con un ciclo de aspersión";
-				caja.style.background = "#F8D7DA";
-				caja.style.padding = "5px";
-				caja.style.color = "#721C24	";
-				caja.style.fontSize = "15px";
-				caja.style.borderRadius = "5px";
-				caja.style.fontWeight ="bold";
-				 $("#cycle_duration").prop("disabled", true);
-				 $("#standby_time").prop("disabled", true);
-				 $('#Enviar').prop('disabled', true);
-				
-
-			
-				 
-				
-			}if(data.detail){
-			var caja = document.getElementById("mesage");
-
-			caja.innerHTML = " ";
-			caja.style.background = "white";
-			
-			 $("#cycle_duration").prop("disabled", false);
-			 $("#standby_time").prop("disabled", false);
-			 $('#Enviar').prop('disabled', false);
-		
-
-
-
-
-
-		}
-
-$('#cycle_duration').val(data.cycle_duration).css("fontWeight","bold").css("fontSize","18px");
-$('#standby_time').val(data.standby_time).css("fontWeight","bold").css("fontSize","18px");
-
- $("#modalc").on('submit', function(e) {
-
-        e.preventDefault();
-        var id =data.id;
-
-       
-        $.ajax({
-         headers:{"Authorization": "Token "+document.cookie},
-         url: 'http://sistemas.smartin.tecnm.mx:443/crops/update-sprinkling/'+data.id+'/' ,
-         method: "Put",
-         data: new FormData(this),
-         contentType: false,
-         cache: false,
-         processData: false,
-         success: (response,jqXHR, textStatus,responseText) => {
-          console.log(response);
-          console.log(jqXHR);
-           console.log(responseText);
-          
-          alert("Se actualizaron los datos correctamente");
-
-          window.location.href = window.location;
-
-        },
-
-        error: (jqXHR, textStatus, errorThrow) => {
-          console.log(jqXHR.responseText);
-         
-
-        }});
-      });  
-
-			
-		},
-
-	});
-			});
-	});
-</script>
 
 
 

@@ -1,29 +1,4 @@
-/*$(document).ready(function(){
-		$.ajax({
-			headers:{"Authorization": "Token "+document.cookie},
-			url: 'https://api-aero.herokuapp.com/users/get-user/' ,
-			DataType:"json",
-			success: function(data) {
-				console.log(data)
-				$.each(data, function(index, valor){
-					console.log(valor);
 
-
-					var row = "<div>"+
-					"  <label >"+valor+  "</label>"+
-
-					"</div>";
-
-					$("#div>p").append(row);
-
-				});
-				document.querySelector(".loading").style.display = 'none';
-
-			},
-
-		});	});
-
-		*/
 		$(document).ready(function(){
 		$.ajax({
 			headers:{"Authorization": "Token "+document.cookie},
@@ -31,6 +6,7 @@
 			cache: false,
 			
 			success: function(data) {
+				
 
 					var row = "<div>"+
 					'<p style="color:black;">Foto de perfil </p>'+'<img style="width:150px; height:150px; border-radius:150px;" src="'+"http://sistemas.smartin.tecnm.mx:443/"+data.image + '"/>'+

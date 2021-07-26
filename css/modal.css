@@ -244,7 +244,7 @@ width: 40px;
     width: 200px;
     height: 50px;
   
-    padding: 0 20px;
+  
     background: #4CAF50;/*cloo del boton adentro*/
     border-radius: 5px;
     
@@ -255,9 +255,10 @@ width: 40px;
     text-align: center;
     transition: all 0.2s linear;
     
-    margin: 2% 20px;
+    margin:10px;
     letter-spacing: 0.05em;
 }
+
 #re{
     display: inline-block;
     color: white;/*color de letra*/
@@ -276,7 +277,7 @@ width: 40px;
     text-align: center;
     transition: all 0.2s linear;
     
-    margin: 2% 20px;
+    margin:10px;
     letter-spacing: 0.05em;
 }
 #pdf{
